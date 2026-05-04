@@ -1017,7 +1017,7 @@ export default function Home() {
               </div>
               {!anyReady && startupDone && documents.length === 0 && (
                 <div style={{ marginTop:24, padding:'12px 16px', background:'#FFF7ED', border:'1px solid #FED7AA', borderRadius:10, fontSize:12, color:'#92400E' }}>
-                  ⚠️ No PDFs found in the <code>/pdfs</code> folder. Add PDF files and reload.
+                  ⚠️ No PDFs found in storage ({storageLabel || 'local /pdfs folder'}). Check your storage configuration and reload.
                 </div>
               )}
             </div>
