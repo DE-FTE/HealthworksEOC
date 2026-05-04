@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-String -Path \"d:\\\\EOCDental\\\\healthworks-rag-pageindex_dev\\\\public\\\\metadata\\\\eoc_metadata.csv\" -Pattern \"Alameda\")",
+      "Bash(Select-Object Line)"
+    ]
+  }
+}

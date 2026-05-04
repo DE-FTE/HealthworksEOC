@@ -1,0 +1,852 @@
+/**
+ * app/api/chat/route.js
+ *
+ * POST /api/chat
+ * Body: { message, docIds: string[], history }
+ *
+ * ─── Three-phase pipeline ─────────────────────────────────────────────────────
+ *
+ * PHASE 0 — Query rewriting + classification (1 gpt-4o-mini call)
+ *   Raw message → clean search query + query type (plan_info | benefit | general)
+ *   - plan_info:  service area, eligibility, contact, plan overview
+ *   - benefit:    costs, copayments, specific service coverage
+ *   - general:    everything else
+ *
+ * PHASE 1 — Local doc pre-filtering (ZERO API calls, handles 1000+ docs)
+ *   keywordSearch() on ALL doc indices locally → score each doc
+ *   For plan_info queries → ALL docs pass (intro pages always relevant)
+ *   For benefit queries  → only docs with keyword score > 0 pass
+ *   Result: top N relevant docs (default 10 max), not all 1000
+ *
+ * PHASE 2 — Per-doc node selection (1 gpt-4o-mini call per filtered doc)
+ *   For plan_info:  force-retrieve intro pages 1-30, skip gpt-4o-mini selection
+ *   For benefit:    keyword candidates + anchor pages → gpt-4o-mini selection
+ *   Only runs for filtered docs (not all 1000)
+ *
+ * PHASE 3 — Answer generation (1 gpt-4o stream call)
+ *   Combined context from all relevant docs → streamed answer
+ */
+
+import OpenAI from 'openai';
+import {
+  loadTreeIndex,
+  flattenAllNodes,
+  buildNodeDirectory,
+  getNodeContents,
+  keywordSearch,
+  extractSnippets,
+} from '@/lib/treeIndex';
+
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+const SELECT_MODEL      = process.env.SELECTION_MODEL      || 'gpt-4o-mini';
+const ANSWER_MODEL      = process.env.ANSWER_MODEL          || 'gpt-4o';
+const MAX_NODES_PER_DOC = parseInt(process.env.MAX_NODES_PER_QUERY || '6', 10);
+// 6 nodes per doc — restored to richer context now that smart filtering reduces doc count
+const MAX_DOCS_TO_QUERY = parseInt(process.env.MAX_DOCS_TO_QUERY   || '5', 10);
+// Max 5 docs — but smart scoring means specific queries only hit 2-3 docs anyway
+const MAX_CONTEXT_CHARS = parseInt(process.env.MAX_CONTEXT_CHARS   || '50000', 10);
+// Safety net: hard truncate at 50k chars — only triggers if scoring passes too many docs
+
+// ─── PHASE 0: Query rewriting + type classification ───────────────────────────
+
+/**
+ * Returns { searchQuery, queryType, docTargets }
+ *
+ * queryType:
+ *   'plan_info' → service area, eligibility, plan overview, contact info
+ *                 Strategy: force-retrieve intro pages 1-30
+ *   'benefit'   → costs, copayments, specific service/procedure coverage
+ *                 Strategy: keyword search → node selection
+ *   'general'   → everything else, treat like benefit
+ *
+ * docTargets: filenames explicitly mentioned in query (empty = all docs)
+ */
+async function analyzeQuery(message, history = []) {
+  const recentCtx = history.slice(-6)
+    .map(m => `${m.role === 'user' ? 'User' : 'AI'}: ${m.content.slice(0, 400)}`)
+    .join('\n');
+
+  const prompt =
+`You are a query analyzer for a healthcare benefits RAG system.
+Given a user message (which may be a follow-up to a prior conversation), return a JSON object with exactly these fields:
+
+{
+  "searchQuery": "3-8 keyword search terms (strip conversational filler, keep medical/benefit terms)",
+  "queryType": "plan_info" | "benefit" | "general",
+  "docTargets": ["filename1", "filename2"]
+}
+
+queryType rules:
+- "plan_info": service area, counties, eligibility, enrollment, plan overview, contact numbers, member ID
+- "benefit": costs, copayment, coinsurance, coverage, deductible, specific procedure/service names
+- "general": comparisons, summaries, multiple topics
+
+docTargets: list ONLY the EXACT document filenames/IDs (e.g. "H1822-001-000" not just "H1822"). Never include partial matches.
+FOLLOW-UP RULE: If the current message uses "it", "same", "above", "that", "those", "the above", or does not name specific documents, INHERIT the docTargets from the most recent user message in the conversation that DID name documents.
+TOPIC RULE: If the current message is a format/display request ("show as table", "display as chart", "convert to pie"), extract the TOPIC keywords from the previous user question, not from the format instruction itself.
+
+${recentCtx ? `Recent conversation:\n${recentCtx}\n\n` : ''}User message: "${message}"
+
+Return ONLY the JSON object, no explanation.`;
+
+  try {
+    const resp = await openai.chat.completions.create({
+      model: SELECT_MODEL, max_tokens: 120, temperature: 0,
+      messages: [{ role: 'user', content: prompt }],
+    });
+    const raw  = resp.choices[0].message.content.trim();
+    const json = JSON.parse(raw.replace(/```json|```/g, '').trim());
+    return {
+      searchQuery: json.searchQuery || message,
+      queryType:   ['plan_info','benefit','general'].includes(json.queryType) ? json.queryType : 'general',
+      docTargets:  Array.isArray(json.docTargets) ? json.docTargets : [],
+    };
+  } catch {
+    return { searchQuery: message, queryType: 'general', docTargets: [] };
+  }
+}
+
+// ─── Multi-benefit term extractor ─────────────────────────────────────────────
+
+/**
+ * When a user asks for multiple benefits in one query (e.g. "[ Acupuncture Copay,
+ * Podiatry Copay, Emergency Care Copay, Chiropractic services copay ]"), a single
+ * combined keyword search dilutes results and 6 nodes can't cover 4 separate
+ * benefit pages. This extracts the individual terms so each gets its own keyword pass.
+ */
+function extractBenefitTerms(message) {
+  // Pattern 1: explicit bracket list  [ term1, term2, ... ]
+  const bracketMatch = message.match(/\[([^\]]{10,})\]/);
+  if (bracketMatch) {
+    const terms = bracketMatch[1].split(',').map(t => t.trim()).filter(t => t.length > 2);
+    if (terms.length > 1) return terms;
+  }
+
+  // Pattern 2: 3+ comma-separated phrases each containing a benefit signal word
+  const BENEFIT_WORD = /\b(copay|copayment|coinsurance|deductible|coverage|service|benefit|cost)\b/i;
+  const parts = message.split(/,\s*(?:and\s+)?/).map(t => t.trim());
+  if (parts.length >= 3) {
+    const hits = parts.filter(t => t.length > 4 && t.length < 80 && BENEFIT_WORD.test(t));
+    if (hits.length >= 3) return hits;
+  }
+
+  return [];
+}
+
+// ─── PHASE 1: Local doc pre-filtering (zero API calls) ────────────────────────
+
+/**
+ * HOW THIS WORKS (same concept as embedding-based retrieval, no vectors):
+ *
+ *   Embeddings RAG:   embed query → cosine similarity vs stored vectors → top K docs
+ *   Our approach:     keyword score query → BM25-style scoring vs stored text → top K docs
+ *
+ * Both achieve the same goal: find the most relevant documents before any API call.
+ * The docId in .registry.json = collection ID in a VectorDB.
+ * The page text in /tmp = the embedded chunks in a VectorDB.
+ *
+ * SCORING:
+ *   For each doc, run keywordSearch() on its full page index (local, zero API calls).
+ *   Score = sum of (keyword hits × position weight) across top matching pages.
+ *   Only docs with score above threshold pass to the expensive API steps.
+ *
+ *   This means for 9 docs:
+ *     "Podiatry costs" → only 2-3 docs that actually mention podiatry pass
+ *     "Service area"   → all docs pass (every healthcare doc has service area)
+ *     "Hey how are you"→ caught by conversational bypass before this runs
+ *
+ * RESULT: gpt-4o-mini selection runs on 2-3 relevant docs, not all 9.
+ * Token usage drops from 34,000 to ~8,000 for specific queries.
+ */
+function filterRelevantDocs(loadedDocs, searchQuery, queryType, docTargets) {
+  // Returns { docs: [...], missingDocs: [...] }
+  // missingDocs = names the user asked for that aren't loaded
+  // Caller checks missingDocs and returns a helpful error to the user
+  // ── Named doc targeting — EXACT match only ────────────────────────────────
+  //
+  // WHY EXACT: partial/stem matching caused "H1822-001-000" to also match
+  // H1822-002-000, H1822-006-000, H1822-007-000 because they all share "h1822".
+  //
+  // Strategy (three levels, first match wins):
+  //   1. Full stem exact match: "h1822-001-000" === "h1822-001-000" ✓
+  //   2. Full name in query:    query contains "h1822-001-000" verbatim ✓
+  //   3. Docname in target:     target "H1822-001-000" is in doc filename ✓
+  // No partial prefix matching — "h1822" alone never matches anything.
+  //
+  if (docTargets.length > 0) {
+    const targeted = loadedDocs.filter(doc => {
+      const stem     = doc.filename.toLowerCase().replace(/\.pdf$/i, '');
+      const filename = doc.filename.toLowerCase();
+      return docTargets.some(t => {
+        const tl   = t.toLowerCase().replace(/\.pdf$/i, '');
+        // Exact stem match
+        if (stem === tl) return true;
+        // Full filename contains the target exactly (handles .pdf suffix)
+        if (filename === tl || filename === tl + '.pdf') return true;
+        // Target contains the full stem (user typed partial but specific enough)
+        if (tl.includes(stem) && stem.length >= 8) return true;
+        // Stem contains the full target (target is substring of longer filename)
+        if (stem.includes(tl) && tl.length >= 8) return true;
+        return false;
+      });
+    });
+    // Check which requested docs were NOT found — tell user instead of silently ignoring
+    const missingDocs = docTargets.filter(t => {
+      const tl = t.toLowerCase().replace(/\.pdf$/i, '');
+      return !loadedDocs.some(doc => {
+        const stem = doc.filename.toLowerCase().replace(/\.pdf$/i, '');
+        return stem === tl || stem.includes(tl) && tl.length >= 8 || tl.includes(stem) && stem.length >= 8;
+      });
+    });
+
+    if (targeted.length > 0) return { docs: targeted, missingDocs };
+    // All named docs are missing — return error info
+    return { docs: [], missingDocs: docTargets };
+  }
+
+  // ── Score every doc locally (zero API calls) ──────────────────────────────
+  const scored = loadedDocs.map(doc => {
+    const allNodes = flattenAllNodes(doc.stored.structure)
+      .filter(n => n.text && n.text.length > 50);
+
+    // Get top 10 matching pages for this doc
+    const topMatches = keywordSearch(allNodes, searchQuery, 10);
+    if (topMatches.length === 0) return { doc, score: 0 };
+
+    // Score = number of matching pages × a boost if top match has exact phrase
+    const exactPhrase = searchQuery.toLowerCase().replace(/\s+/g, ' ').trim();
+    const topText     = (topMatches[0].text || '').toLowerCase();
+    const exactBoost  = topText.includes(exactPhrase) ? 10 : 0;
+    const score       = topMatches.length + exactBoost;
+
+    return { doc, score };
+  });
+
+  // Sort by score descending
+  scored.sort((a, b) => b.score - a.score);
+
+  // plan_info: always take top MAX_DOCS (service area exists in every doc)
+  if (queryType === 'plan_info') {
+    return { docs: scored.slice(0, MAX_DOCS_TO_QUERY).map(s => s.doc), missingDocs: [] };
+  }
+
+  // benefit/general: only include docs with score > 0 (actually have the content)
+  const relevant = scored.filter(s => s.score > 0);
+
+  // If NO doc has keyword hits → fall back to top MAX_DOCS (prevents empty results)
+  const pool = relevant.length > 0 ? relevant : scored;
+
+  return { docs: pool.slice(0, MAX_DOCS_TO_QUERY).map(s => s.doc), missingDocs: [] };
+}
+
+// ─── PHASE 2a: Force-retrieve intro pages (plan_info queries) ─────────────────
+
+/**
+ * For plan_info queries (service area, eligibility etc):
+ * Instead of keyword selection, directly retrieve the first 30 pages.
+ * These pages ALWAYS contain plan overview info in healthcare benefit docs.
+ * No gpt-4o-mini selection needed — we retrieve all intro pages directly.
+ */
+function getIntroPagesForDoc(stored) {
+  const allNodes = flattenAllNodes(stored.structure)
+    .filter(n => n.text && n.text.length > 50);
+  // Get first 30 pages directly — no selection step
+  return getNodeContents(allNodes, allNodes.slice(0, 30).map(n => String(n.nodeId)));
+}
+
+// ─── PHASE 2b: Keyword selection (benefit queries) ────────────────────────────
+
+async function selectNodesForDoc(stored, searchQuery, queryType = 'general', benefitTerms = []) {
+  const allNodes = flattenAllNodes(stored.structure)
+    .filter(n => n.text && n.text.length > 50);
+  if (allNodes.length === 0) return [];
+
+  const isMultiBenefit = benefitTerms.length > 1;
+  const nodeLimit = isMultiBenefit
+    ? Math.min(benefitTerms.length * 3, 12)
+    : MAX_NODES_PER_DOC;
+
+  // ── Multi-benefit: bypass GPT selection entirely ──────────────────────────
+  //
+  // WHY bypass: when given 60 candidates to select 12 from, GPT over-selects
+  // pages that mention multiple services (summary/intro pages) and silently
+  // ignores single-service-specific pages. GPT selection is unreliable as a
+  // "cover all N benefits equally" allocator.
+  //
+  // WHY multi-signal: different plans use different cost terminology:
+  //   H0978 → "copayment: $0"    H0976 → "your cost: $0" or "cost sharing"
+  // Searching only "Podiatry copayment" misses H0976-style pages.
+  // Three passes per term (copayment → cost → bare) ensures maximum recall
+  // regardless of how a specific plan phrases its benefits table.
+  if (isMultiBenefit) {
+    const pagesPerTerm = 4;
+    const seenFinal = new Set(), finalNodes = [];
+
+    for (const term of benefitTerms) {
+      // coreTerm: strip "services" AND "copay" → "Podiatry services Copay" → "Podiatry"
+      // Used for augmented signals where "services" adds noise
+      const coreTerm = term
+        .replace(/\s*(copay|copayment)\s*$/i, '')
+        .replace(/\bservices?\b/gi, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      // termWithServices: strip only "copay" → "Podiatry services Copay" → "Podiatry services"
+      // WHY: H0976 page is titled "Podiatry Services: You pay $0" — "services" is critical
+      // for matching that page title. Stripping it makes "Podiatry services" → "Podiatry"
+      // which is too broad and returns TOC/appendix pages instead of the benefits table.
+      const termWithServices = term
+        .replace(/\s*(copay|copayment)\s*$/i, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      // Pass 1: "Podiatry copayment"        — plans that say "copayment: $X"
+      // Pass 2: "Podiatry cost"             — plans that say "your cost: $X" or "cost sharing"
+      // Pass 3: "Podiatry services"         — matches page titles like "Podiatry Services" (key for H0976)
+      // Pass 4: "Podiatry"                  — maximum recall fallback
+      const r1 = keywordSearch(allNodes, `${coreTerm} copayment`, 30);
+      const r2 = keywordSearch(allNodes, `${coreTerm} cost`, 20);
+      const r3 = keywordSearch(allNodes, termWithServices, 20);
+      const r4 = keywordSearch(allNodes, coreTerm, 15);
+
+      const termSeen = new Set();
+      let added = 0;
+      for (const node of [...r1, ...r2, ...r3, ...r4]) {
+        if (!termSeen.has(node.nodeId)) {
+          termSeen.add(node.nodeId);
+          if (!seenFinal.has(node.nodeId) && added < pagesPerTerm) {
+            seenFinal.add(node.nodeId);
+            finalNodes.push(node);
+            added++;
+          }
+        }
+      }
+    }
+
+    return getNodeContents(allNodes, finalNodes.map(n => String(n.nodeId)));
+  }
+
+  // ── Single-benefit: original keyword + GPT selection path ────────────────
+  //
+  // WHY augment: "Podiatry" appears in both the benefits table (page 174, has "$0")
+  // AND the appendix/index (pages 263-267, just mentions the word).
+  // Adding "copayment" to the search boosts cost-table pages over index pages.
+  const augmentedQuery = queryType === 'benefit' ? `${searchQuery} copayment` : searchQuery;
+  const keywordCandidates = keywordSearch(allNodes, searchQuery, 30);
+  const augCandidates     = queryType === 'benefit' ? keywordSearch(allNodes, augmentedQuery, 15) : [];
+  const anchorPages       = allNodes.slice(0, 25);
+
+  const seen = new Set(), candidates = [];
+  [...keywordCandidates, ...augCandidates, ...anchorPages].forEach(n => {
+    if (!seen.has(n.nodeId)) { seen.add(n.nodeId); candidates.push(n); }
+  });
+
+  const nodeDirectory = buildNodeDirectory(candidates, 55);
+
+  const selectionPrompt =
+`You are a healthcare EOC (Evidence of Coverage) document navigator.
+Select the ${nodeLimit} most relevant sections from "${stored.filename}" for the search query.
+
+EOC DOCUMENT STRUCTURE — use this to guide your selection:
+- Pages 1-25:    Plan overview, service area, eligibility, member ID, contact info
+- Pages 25-80:   Medical benefits introduction, prior authorization rules
+- Pages 80-200:  BENEFITS CHART — the main table of covered services and costs
+                 (copayments, coinsurance, prior auth). THIS IS WHERE SPECIFIC
+                 SERVICE COSTS ARE LISTED (acupuncture, podiatry, dental, etc.)
+- Pages 200-280: Prescription drug coverage, formulary tiers, Part D
+- Pages 280-350: Exclusions, appeals, grievances, legal notices
+
+SELECTION RULES:
+1. For any specific SERVICE, COST, or COPAYMENT query → select pages in the
+   80-200 range (Benefits Chart). The answer is almost always there.
+2. For SERVICE AREA, COUNTIES, ELIGIBILITY → select pages 1-25.
+3. For DRUG COVERAGE, FORMULARY, PRESCRIPTION → select pages 200-280.
+4. The DIRECTORY below shows page numbers — use the structure above to pick
+   the right range, even if keyword matches point elsewhere.
+5. ALWAYS include at least 2-3 pages from the Benefits Chart (80-200) for
+   any benefit/cost query. Do not skip this range.
+6. Cast a wide net — better to over-select than miss the answer.
+
+Return ONLY a JSON array of section ID strings e.g. ["7","90","141"].
+
+Search query: "${searchQuery}"
+
+Section directory:
+${nodeDirectory}`;
+
+  let selectedIds = [];
+  try {
+    const resp = await openai.chat.completions.create({
+      model: SELECT_MODEL, max_tokens: 150, temperature: 0,
+      messages: [{ role: 'user', content: selectionPrompt }],
+    });
+    const parsed = JSON.parse(resp.choices[0].message.content.trim());
+    if (Array.isArray(parsed)) selectedIds = parsed.map(String);
+  } catch {
+    selectedIds = candidates.slice(0, nodeLimit).map(n => String(n.nodeId));
+  }
+
+  const validIds = selectedIds.filter(id => allNodes.some(n => String(n.nodeId) === id));
+  const finalIds = validIds.length > 0
+    ? validIds.slice(0, nodeLimit)
+    : candidates.slice(0, nodeLimit).map(n => String(n.nodeId));
+
+  return getNodeContents(allNodes, finalIds);
+}
+
+
+
+// ─── Main handler ─────────────────────────────────────────────────────────────
+
+export async function POST(request) {
+  try {
+    const { message, docIds = [], history = [] } = await request.json();
+
+    if (!message?.trim()) return Response.json({ error: 'Message required.' }, { status: 400 });
+    if (!docIds.length)    return Response.json({ error: 'No documents loaded.' }, { status: 400 });
+
+    // Load all indexed docs
+    const allLoadedDocs = docIds
+      .map(id => { const s = loadTreeIndex(id); return s ? { docId:id, filename:s.filename, stored:s } : null; })
+      .filter(Boolean);
+    if (allLoadedDocs.length === 0) return Response.json({ error: 'Documents not found. Reload the page.' }, { status: 404 });
+
+    // ── PHASE 0: Detect conversational messages — skip retrieval ─────────────
+    // Greetings, thanks, meta-questions about the app don't need doc retrieval.
+    // Sending them through the full pipeline wastes tokens and may exceed limits.
+    const CONVERSATIONAL = /^(hey|hi|hello|how are|thanks|thank you|who are you|what (can|do) you|help me|good (morning|afternoon|evening))/i;
+    if (CONVERSATIONAL.test(message.trim()) && message.trim().length < 80) {
+      const quickReply = await openai.chat.completions.create({
+        model: SELECT_MODEL, max_tokens: 200, temperature: 0.7,
+        messages: [
+          { role: 'system', content: 'You are HealthworksAI, a healthcare benefits assistant. Respond briefly and helpfully. Mention you can answer questions about the loaded healthcare plan documents.' },
+          { role: 'user',   content: message },
+        ],
+      });
+      const reply = quickReply.choices[0].message.content;
+      const encoder = new TextEncoder();
+      const readable = new ReadableStream({
+        start(controller) {
+          const fakeChunk = { choices: [{ delta: { content: reply }, finish_reason: 'stop' }] };
+          controller.enqueue(encoder.encode('data: [SOURCES]' + JSON.stringify([]) + '\n\n'));
+          controller.enqueue(encoder.encode('data: ' + JSON.stringify(fakeChunk) + '\n\n'));
+          controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+          controller.close();
+        },
+      });
+      return new Response(readable, {
+        headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive' },
+      });
+    }
+
+    // ── PHASE 0b: Detect pure reformatting follow-ups ────────────────────────
+    // When user asks to change the FORMAT of the previous answer (table, chart, pie,
+    // bar, line) while referencing "it / same / above / that", skip document retrieval
+    // entirely and reformat the last assistant message directly.
+    const REFORMAT_TYPE = /\b(tabular|table|pie\s*chart|piechart|bar\s*chart|barchart|line\s*chart|linechart|area\s*chart|donut|graph|chart|visuali[sz])\b/i;
+    const REF_PREVIOUS  = /\b(it|same|above|that|those|the above|previous|prior)\b/i;
+    const lastAssistantContent = history.filter(m => m.role === 'assistant').slice(-1)[0]?.content;
+
+    if (REFORMAT_TYPE.test(message) && REF_PREVIOUS.test(message) && lastAssistantContent) {
+      const VISUALIZATION_SCHEMA =
+`VISUALISATION INSTRUCTIONS
+When the user asks for a chart, table, graph, or visualization, embed [CHART]...[/CHART] blocks AFTER a brief explanation.
+
+Choose "type" based on what was asked:
+  "bar"   → side-by-side category comparison   "line"  → trends / sequences
+  "area"  → line with filled area               "pie"   → part-of-whole breakdown
+  "donut" → pie with hole                       "table" → rows and columns (use for "tabular format")
+
+Bar / Line / Area:
+[CHART]
+{"type":"bar","title":"Title","subtitle":"Source","labels":["Plan A","Plan B"],"datasets":[{"label":"Metric","values":[0,10],"color":"#7C3AED"}],"yAxisLabel":"Value"}
+[/CHART]
+Pie / Donut:
+[CHART]
+{"type":"pie","title":"Title","subtitle":"Source","labels":["A","B"],"values":[60,40],"colors":["#7C3AED","#3B82F6"]}
+[/CHART]
+Table:
+[CHART]
+{"type":"table","title":"Title","subtitle":"Source","columns":["Plan","Service","Cost","Prior Auth"],"rows":[["Plan A","Service","$0","Yes"]],"highlight":[0]}
+[/CHART]`;
+
+      const reformatResp = await openai.chat.completions.create({
+        model: ANSWER_MODEL, max_tokens: 2000, temperature: 0.1, stream: false,
+        messages: [
+          { role: 'system', content: `You are HealthworksAI, an expert healthcare benefits analyst. The user wants to reformat or visualize the previous answer. Extract all data from the previous answer and present it in the requested format.\n\n${VISUALIZATION_SCHEMA}` },
+          { role: 'assistant', content: lastAssistantContent },
+          { role: 'user', content: message },
+        ],
+      });
+
+      const reformatAnswer = reformatResp.choices[0].message.content || '';
+      const enc2 = new TextEncoder();
+      const reformatStream = new ReadableStream({
+        async start(ctrl) {
+          ctrl.enqueue(enc2.encode(`data: [SOURCES]${JSON.stringify([])}\n\n`));
+          const words = reformatAnswer.split(' ');
+          for (let i = 0; i < words.length; i += 8) {
+            const chunk = words.slice(i, i + 8).join(' ') + (i + 8 < words.length ? ' ' : '');
+            ctrl.enqueue(enc2.encode('data: ' + JSON.stringify({ choices: [{ delta: { content: chunk }, finish_reason: null }] }) + '\n\n'));
+          }
+          ctrl.enqueue(enc2.encode('data: [DONE]\n\n'));
+          ctrl.close();
+        },
+      });
+      return new Response(reformatStream, {
+        headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive' },
+      });
+    }
+
+    // ── PHASE 0: Analyze query ──────────────────────────────────────────────
+    const { searchQuery, queryType, docTargets } = await analyzeQuery(message, history);
+    // Extract individual benefit terms for multi-benefit queries
+    // e.g. "[ Acupuncture Copay, Podiatry Copay, Emergency Care Copay ]" → 3 terms
+    const benefitTerms = extractBenefitTerms(message);
+
+    // ── PHASE 1: Local pre-filtering (zero API calls) ───────────────────────
+    const { docs: targetDocs, missingDocs } = filterRelevantDocs(allLoadedDocs, searchQuery, queryType, docTargets);
+
+    // ── Early exit: named docs not found in library ───────────────────────────
+    if (missingDocs.length > 0 && targetDocs.length === 0) {
+      const errMsg = `The following document(s) you mentioned are **not loaded** in the PDF library:\n\n` +
+        missingDocs.map(d => `- ❌ **${d}**`).join('\n') +
+        `\n\nDocuments currently loaded:\n` +
+        allLoadedDocs.map(d => `- ✅ ${d.filename}`).join('\n') +
+        `\n\nPlease check the filename and try again, or ask about one of the loaded documents.`;
+      const encoder2 = new TextEncoder();
+      const errChunk = { choices: [{ delta: { content: errMsg }, finish_reason: 'stop' }] };
+      const errStream = new ReadableStream({
+        start(ctrl) {
+          ctrl.enqueue(encoder2.encode('data: [SOURCES]' + JSON.stringify([]) + '\n\n'));
+          ctrl.enqueue(encoder2.encode('data: ' + JSON.stringify(errChunk) + '\n\n'));
+          ctrl.enqueue(encoder2.encode('data: [DONE]\n\n'));
+          ctrl.close();
+        },
+      });
+      return new Response(errStream, {
+        headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive' },
+      });
+    }
+
+    // Partial match — some named docs found, some missing — note the missing ones
+    const missingNote = missingDocs.length > 0
+      ? `\n\n> ⚠️ Note: ${missingDocs.join(', ')} was not found in the loaded library and was skipped.`
+      : ''
+
+    // ── PHASE 2: Retrieve nodes per doc (parallel) ──────────────────────────
+    const docResults = await Promise.all(
+      targetDocs.map(async doc => {
+        let nodes;
+        if (queryType === 'plan_info') {
+          nodes = getIntroPagesForDoc(doc.stored);
+        } else {
+          nodes = await selectNodesForDoc(doc.stored, searchQuery, queryType, benefitTerms);
+        }
+        return { filename: doc.filename, nodes, stored: doc.stored };
+      })
+    );
+
+    // ── Build context ────────────────────────────────────────────────────────
+    const contextParts = [], sourcedFrom = [];
+    for (const { filename, nodes } of docResults) {
+      if (!nodes.length) continue;
+      const snippets = extractSnippets(nodes, searchQuery, 300);
+      contextParts.push(`${'═'.repeat(50)}\nDOCUMENT: ${filename}\n${'═'.repeat(50)}\n${snippets}`);
+      nodes.forEach(n => sourcedFrom.push(`${filename} · ${n.title}${n.pages ? ` (pp.${n.pages})` : ''}`));
+    }
+
+    if (!contextParts.length) return Response.json({ error: 'No relevant content found.' }, { status: 404 });
+
+    // Append missing doc warning to context so GPT-4o mentions it in the answer
+    if (missingNote) contextParts.push(missingNote);
+
+    // Per-doc budget: divide MAX_CONTEXT_CHARS equally so one large doc can't
+    // crowd out another. Each doc gets an equal share; unused budget is not redistributed
+    // (keeps it simple and prevents the first doc from eating everything).
+    const perDocBudget = Math.floor(MAX_CONTEXT_CHARS / Math.max(contextParts.length, 1));
+    const truncatedParts = contextParts.map(part =>
+      part.length > perDocBudget
+        ? part.slice(0, perDocBudget) + '\n[Doc context truncated to fit token budget]'
+        : part
+    );
+    let context = truncatedParts.join('\n\n');
+
+    // ── PHASE 3: Generate answer (with auto-retry if "not found") ────────────
+    //
+    // How auto-retry works:
+    //   Pass 1: Use selected nodes → get answer
+    //   If answer contains "not found" / "not mentioned" / "not available"
+    //   → the selection step likely picked wrong pages
+    //   Pass 2: Re-retrieve with DOUBLED node count + wider keyword search
+    //           (uses a different random seed via temperature=0.3 on selection)
+    //   → GPT-4o answers from the broader context
+    //
+    // This eliminates the need for the user to manually re-ask.
+
+    // Catches all common GPT "not found" phrasings so the auto-retry fires:
+    //   "not found in the provided context"
+    //   "not provided in the excerpts above"
+    //   "Not found."  (standalone — was missing)
+    //   "does not provide specific information"  (was missing)
+    //   "no information available"  (was missing)
+    //   "cannot find / cannot provide information"  (was missing)
+    const NOT_FOUND_PATTERN = new RegExp([
+      // "not X in the provided/given/above/excerpts/context/..."
+      'not (found|mentioned|available|provided|specified|included|present|contained|covered) in (the |these )?(provided|given|these|this|above|excerpts?|context|sections?|documents?|information)',
+      // standalone "Not found" at start of sentence or label
+      '\\bnot found\\b',
+      // "does not provide/contain/include (specific/any) information/details"
+      'does not (provide|contain|include|have) (specific |any )?(information|details?|data)',
+      // "no (specific) information available/provided/found"
+      'no (specific |relevant )?(information|data|details?) (is |are )?(available|provided|found)',
+      // "cannot find/provide/locate information"
+      'cannot (find|locate|provide|retrieve|access) (the |any |this |specific )?(information|details?|data|answer)',
+      // "I (could not|was unable to) find information"
+      'i (could not|was unable to|am unable to) (find|locate|identify|provide)',
+    ].join('|'), 'i');
+
+    const generateAnswer = async (ctx) => {
+      const isMultiDoc   = targetDocs.length > 1;
+      const docNamesList = targetDocs.map(d => d.filename).join(', ');
+      const allDocNames  = allLoadedDocs.map(d => d.filename).join(', ');
+
+      const systemPrompt =
+`You are HealthworksAI, an expert healthcare benefits analyst.
+Answer accurately based ONLY on the provided document sections.
+
+${isMultiDoc ? `COMPARATIVE MODE — ${targetDocs.length} documents:
+- Label each answer clearly: **H0976-001-000.pdf:** [answer] then **H0978-001-000.pdf:** [answer]
+- If info differs between plans, highlight the difference
+- End with a Comparison Summary
+` : ''}
+READING EOC BENEFITS CHARTS (2-column PDF table format):
+EOC documents use a 2-column table: LEFT = "Covered Service" + description, RIGHT = "What you pay".
+When extracted, the right-column cost value appears AFTER the left-column description text.
+
+Rules for reading these tables:
+1. The FIRST dollar amount ("$0", "$30", "$90") after a service name = that service's copayment.
+2. Text that follows the dollar amount (e.g., "If you get emergency care at an out-of-network
+   hospital...") describes EXCEPTIONS or CONDITIONS — it does NOT replace the primary copayment.
+   Example: "Emergency care ... $0  If you get emergency care at an out-of-network hospital, your
+   cost is..." → Emergency Care copayment = $0. Report "$0", not "cost not specified".
+3. "$0" = "$0 copayment" = "no charge" = "covered at no cost to you". ALWAYS report the dollar
+   amount you find — never say "cost not specified" if a $ value is present anywhere near the service.
+4. Each section has [RELEVANT EXCERPTS] and [FULL PAGE TEXT] — scan BOTH before concluding not found.
+5. Service name and its cost may be separated by a long description — keep reading past it.
+
+TERMINOLOGY EQUIVALENCE — treat these as identical when answering:
+- "Podiatry" = "Podiatry Services" = "Podiatry Care" = "Foot Care"
+- "Acupuncture" = "Acupuncture Services" = "Acupuncture Care"
+- "Emergency Care" = "Emergency Room" = "Emergency Services" = "ER Visit" = "Emergency Department"
+- "Chiropractic" = "Chiropractic Services" = "Chiropractic Care" = "Spinal Manipulation"
+- "copayment" = "copay" = "your cost" = "you pay" = "cost sharing" = "member cost" = "your share"
+- "$0" = "no charge" = "no copayment" = "covered at no cost"
+If a page says "Podiatry Services: You pay $0", that IS the copayment for Podiatry — report "$0".
+Do NOT say "not found" if the information exists under a slightly different label or phrasing.
+
+Always cite document name and page, e.g. "**H0976-001-000.pdf, Page 90**".
+Only say "not found" after scanning EVERY excerpt AND full text section provided.
+
+──────────────────────────────────────────────────────────────────
+VISUALISATION INSTRUCTIONS
+──────────────────────────────────────────────────────────────────
+When the user asks for a chart, table, graph, visualization, or comparison in visual form,
+embed one or more [CHART]...[/CHART] blocks AFTER your text explanation.
+
+Choose "type" based on what was asked:
+  "bar"     → side-by-side category comparison (default for cost comparisons)
+  "stacked" → stacked bar (e.g. "stacked bar chart")
+  "line"    → trends over time / sequences
+  "area"    → line with filled area
+  "pie"     → part-of-whole breakdown
+  "donut"   → pie with hole (e.g. "donut chart")
+  "scatter" → x/y correlation
+  "table"   → rows and columns of data (use for "tabular format", "table", "list as table")
+
+SCHEMAS:
+Bar / Stacked / Line / Area:
+[CHART]
+{"type":"bar","title":"Title","subtitle":"Source: Page N","labels":["Plan A","Plan B"],"datasets":[{"label":"Cost","values":[0,10],"color":"#7C3AED"}],"yAxisLabel":"Cost ($)"}
+[/CHART]
+Pie / Donut:
+[CHART]
+{"type":"pie","title":"Title","subtitle":"Source: Page N","labels":["Category A","Category B"],"values":[60,40],"colors":["#7C3AED","#3B82F6"]}
+[/CHART]
+Table:
+[CHART]
+{"type":"table","title":"Title","subtitle":"Source: Pages N","columns":["Plan","Service","Cost","Prior Auth"],"rows":[["SCAN Connections","Podiatry","$0","Yes"],["SCAN Classic","Podiatry","$0","Yes"]],"highlight":[0]}
+[/CHART]
+RULES:
+- Match "type" exactly to what user asks
+- Always write a brief text explanation BEFORE the [CHART] block
+──────────────────────────────────────────────────────────────────
+
+Documents provided for this query: ${docNamesList}
+All documents loaded in system: ${allDocNames}
+Query type detected: ${queryType}`;
+
+      const conversationHistory = history
+        .filter(m => m.role === 'user' || m.role === 'assistant')
+        .slice(-8)
+        .map(m => ({ role: m.role, content: m.content }));
+
+      // Non-streaming call for pass 1 — we need to check the answer before streaming
+      const resp = await openai.chat.completions.create({
+        model: ANSWER_MODEL, max_tokens: 3000, temperature: 0.2, stream: false,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          ...conversationHistory,
+          { role: 'user',   content: `Document sections:\n\n${ctx}\n\nQuestion: ${message}` },
+        ],
+      });
+      return resp.choices[0].message.content || '';
+    };
+
+    // ── Pass 1 ────────────────────────────────────────────────────────────────
+    let finalAnswer = await generateAnswer(context);
+
+    // ── Auto-retry if answer says "not found" ─────────────────────────────────
+    if (NOT_FOUND_PATTERN.test(finalAnswer)) {
+      // Re-retrieve with doubled node count and wider keyword search
+      const retryNodeLimit = benefitTerms.length > 1
+        ? Math.min(benefitTerms.length * 4, 16)
+        : Math.min(MAX_NODES_PER_DOC * 2, 12);
+
+      const widerDocResults = await Promise.all(
+        targetDocs.map(async doc => {
+          const allNodes = flattenAllNodes(doc.stored.structure).filter(n => n.text && n.text.length > 50);
+
+          if (benefitTerms.length > 1) {
+            // Multi-benefit retry: same three-pass approach, 5 pages/term for wider coverage
+            const retryPagesPerTerm = 5;
+            const seenR = new Set(), retryNodes = [];
+            for (const term of benefitTerms) {
+              const coreTerm = term
+                .replace(/\s*(copay|copayment)\s*$/i, '')
+                .replace(/\bservices?\b/gi, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+              const termWithServices = term
+                .replace(/\s*(copay|copayment)\s*$/i, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+              const r1 = keywordSearch(allNodes, `${coreTerm} copayment`, 40);
+              const r2 = keywordSearch(allNodes, `${coreTerm} cost`, 30);
+              const r3 = keywordSearch(allNodes, termWithServices, 25);
+              const r4 = keywordSearch(allNodes, coreTerm, 20);
+              const termSeen = new Set();
+              let added = 0;
+              for (const node of [...r1, ...r2, ...r3, ...r4]) {
+                if (!termSeen.has(node.nodeId)) {
+                  termSeen.add(node.nodeId);
+                  if (!seenR.has(node.nodeId) && added < retryPagesPerTerm) {
+                    seenR.add(node.nodeId);
+                    retryNodes.push(node);
+                    added++;
+                  }
+                }
+              }
+            }
+            return { filename: doc.filename, nodes: getNodeContents(allNodes, retryNodes.map(n => String(n.nodeId))) };
+          }
+
+          // Single-benefit retry: wider keyword search + GPT selection
+          const seenR = new Set(), wider = [];
+          keywordSearch(allNodes, searchQuery, 50).forEach(n => {
+            if (!seenR.has(n.nodeId)) { seenR.add(n.nodeId); wider.push(n); }
+          });
+          if (queryType === 'benefit') {
+            keywordSearch(allNodes, `${searchQuery} copayment`, 20).forEach(n => {
+              if (!seenR.has(n.nodeId)) { seenR.add(n.nodeId); wider.push(n); }
+            });
+          }
+          allNodes.slice(0, 30).forEach(n => {
+            if (!seenR.has(n.nodeId)) { seenR.add(n.nodeId); wider.push(n); }
+          });
+
+          const dir = buildNodeDirectory(wider, 70);
+          const selPrompt =
+`You are a healthcare EOC document navigator — RETRY ATTEMPT.
+The previous retrieval did NOT find the answer. You must look more broadly.
+
+EOC STRUCTURE:
+- Benefits Chart (main cost table): pages 80-250 — THIS IS THE MOST IMPORTANT RANGE
+- Service area / eligibility: pages 1-30
+- Drug coverage: pages 200-300
+
+For query "${searchQuery}", the answer MUST exist in this document.
+Select the ${retryNodeLimit} most likely sections.
+Prioritize pages 80-250 (Benefits Chart). Cast the widest possible net.
+Return ONLY a JSON array of section IDs.
+
+Section directory:
+${dir}`;
+
+          let retryIds = [];
+          try {
+            const r = await openai.chat.completions.create({
+              model: SELECT_MODEL, max_tokens: 200, temperature: 0.4,
+              messages: [{ role: 'user', content: selPrompt }],
+            });
+            const parsed = JSON.parse(r.choices[0].message.content.trim());
+            if (Array.isArray(parsed)) retryIds = parsed.map(String);
+          } catch {
+            retryIds = wider.slice(0, retryNodeLimit).map(n => String(n.nodeId));
+          }
+
+          const validRetry = retryIds.filter(id => allNodes.some(n => String(n.nodeId) === id));
+          const finalRetry = validRetry.length > 0 ? validRetry : wider.slice(0, retryNodeLimit).map(n => String(n.nodeId));
+          return { filename: doc.filename, nodes: getNodeContents(allNodes, finalRetry) };
+        })
+      );
+
+      // Rebuild context with wider retrieval
+      const retryParts = [], retrySources = [];
+      for (const { filename, nodes } of widerDocResults) {
+        if (!nodes.length) continue;
+        const snippets = extractSnippets(nodes, searchQuery, 400); // wider snippets
+        retryParts.push(`${'═'.repeat(50)}\nDOCUMENT: ${filename} [EXPANDED SEARCH]\n${'═'.repeat(50)}\n${snippets}`);
+        nodes.forEach(n => retrySources.push(`${filename} · ${n.title}${n.pages ? ` (pp.${n.pages})` : ''}`));
+      }
+
+      if (retryParts.length) {
+        let retryContext = retryParts.join('\n\n');
+        if (retryContext.length > MAX_CONTEXT_CHARS) retryContext = retryContext.slice(0, MAX_CONTEXT_CHARS);
+        const retryAnswer = await generateAnswer(retryContext);
+        // Use retry answer only if it's better (doesn't contain "not found")
+        if (!NOT_FOUND_PATTERN.test(retryAnswer) || retryAnswer.length > finalAnswer.length) {
+          finalAnswer = retryAnswer;
+          sourcedFrom.length = 0;
+          retrySources.forEach(s => sourcedFrom.push(s));
+        }
+      }
+    }
+
+    // ── Stream the final answer ───────────────────────────────────────────────
+    const encoder  = new TextEncoder();
+    const readable = new ReadableStream({
+      async start(controller) {
+        controller.enqueue(encoder.encode(`data: [SOURCES]${JSON.stringify(sourcedFrom)}\n\n`));
+        // Stream the answer word-by-word for smooth UX
+        const words = finalAnswer.split(' ');
+        for (let i = 0; i < words.length; i += 8) {
+          const chunk = words.slice(i, i + 8).join(' ') + (i + 8 < words.length ? ' ' : '');
+          const fakeChunk = { choices: [{ delta: { content: chunk }, finish_reason: null }] };
+          controller.enqueue(encoder.encode('data: ' + JSON.stringify(fakeChunk) + '\n\n'));
+        }
+        controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+        controller.close();
+      },
+    });
+
+    return new Response(readable, {
+      headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive' },
+    });
+
+  } catch (err) {
+    console.error('[chat] error:', err);
+    return Response.json({ error: err.message || 'Internal error.' }, { status: 500 });
+  }
+}
