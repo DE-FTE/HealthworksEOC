@@ -1044,7 +1044,7 @@ export default function Home() {
               onKeyDown={handleKeyDown}
               disabled={busy}
               rows={1}
-              placeholder={anyReady ? 'Ask about EOC & Dental documents — exclusions, limits, coverage terms...' : (startupDone ? 'Add PDFs to /pdfs folder and reload…' : 'Indexing documents…')}
+              placeholder={anyReady ? 'Ask about EOC & Dental documents — exclusions, limits, coverage terms...' : (startupDone ? `No documents found in ${storageLabel || 'storage'} — check configuration and reload…` : 'Indexing documents…')}
               style={{ flex:1, background:'transparent', border:'none', outline:'none', resize:'none', fontSize:13.5, color:'#1E293B', fontFamily:'inherit', lineHeight:1.5, maxHeight:100, overflowY:'auto' }}
               onInput={e => { e.target.style.height='auto'; e.target.style.height=Math.min(e.target.scrollHeight,100)+'px'; }}
             />
