@@ -37,7 +37,13 @@ import {
   extractSnippets,
 } from '@/lib/treeIndex';
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// Lazy singleton — instantiated on first request, not at build time.
+// This prevents "missing OPENAI_API_KEY" errors during next build.
+let _openai = null;
+const getOpenAI = () => {
+  if (!_openai) _openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  return _openai;
+};
 
 const SELECT_MODEL      = process.env.SELECTION_MODEL      || 'gpt-4o-mini';
 const ANSWER_MODEL      = process.env.ANSWER_MODEL          || 'gpt-4o';
@@ -91,7 +97,7 @@ ${recentCtx ? `Recent conversation:\n${recentCtx}\n\n` : ''}User message: "${mes
 Return ONLY the JSON object, no explanation.`;
 
   try {
-    const resp = await openai.chat.completions.create({
+    const resp = await getOpenAI().chat.completions.create({
       model: SELECT_MODEL, max_tokens: 120, temperature: 0,
       messages: [{ role: 'user', content: prompt }],
     });
@@ -377,7 +383,7 @@ ${nodeDirectory}`;
 
   let selectedIds = [];
   try {
-    const resp = await openai.chat.completions.create({
+    const resp = await getOpenAI().chat.completions.create({
       model: SELECT_MODEL, max_tokens: 150, temperature: 0,
       messages: [{ role: 'user', content: selectionPrompt }],
     });
@@ -417,7 +423,7 @@ export async function POST(request) {
     // Sending them through the full pipeline wastes tokens and may exceed limits.
     const CONVERSATIONAL = /^(hey|hi|hello|how are|thanks|thank you|who are you|what (can|do) you|help me|good (morning|afternoon|evening))/i;
     if (CONVERSATIONAL.test(message.trim()) && message.trim().length < 80) {
-      const quickReply = await openai.chat.completions.create({
+      const quickReply = await getOpenAI().chat.completions.create({
         model: SELECT_MODEL, max_tokens: 200, temperature: 0.7,
         messages: [
           { role: 'system', content: 'You are HealthworksAI, a healthcare benefits assistant. Respond briefly and helpfully. Mention you can answer questions about the loaded healthcare plan documents.' },
@@ -471,7 +477,7 @@ Table:
 {"type":"table","title":"Title","subtitle":"Source","columns":["Plan","Service","Cost","Prior Auth"],"rows":[["Plan A","Service","$0","Yes"]],"highlight":[0]}
 [/CHART]`;
 
-      const reformatResp = await openai.chat.completions.create({
+      const reformatResp = await getOpenAI().chat.completions.create({
         model: ANSWER_MODEL, max_tokens: 2000, temperature: 0.1, stream: false,
         messages: [
           { role: 'system', content: `You are HealthworksAI, an expert healthcare benefits analyst. The user wants to reformat or visualize the previous answer. Extract all data from the previous answer and present it in the requested format.\n\n${VISUALIZATION_SCHEMA}` },
@@ -693,7 +699,7 @@ Query type detected: ${queryType}`;
         .map(m => ({ role: m.role, content: m.content }));
 
       // Non-streaming call for pass 1 — we need to check the answer before streaming
-      const resp = await openai.chat.completions.create({
+      const resp = await getOpenAI().chat.completions.create({
         model: ANSWER_MODEL, max_tokens: 3000, temperature: 0.2, stream: false,
         messages: [
           { role: 'system', content: systemPrompt },
@@ -786,7 +792,7 @@ ${dir}`;
 
           let retryIds = [];
           try {
-            const r = await openai.chat.completions.create({
+            const r = await getOpenAI().chat.completions.create({
               model: SELECT_MODEL, max_tokens: 200, temperature: 0.4,
               messages: [{ role: 'user', content: selPrompt }],
             });
