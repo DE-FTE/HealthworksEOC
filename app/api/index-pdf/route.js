@@ -68,7 +68,7 @@ export async function POST(request) {
         // On Vercel cold start, /tmp is empty but registry still has the docId —
         // in that case we fall through and re-index (parsePdf is still zero LLM calls).
         //
-        const existing = getRegistered(filename);
+        const existing = await getRegistered(filename);
         if (existing?.docId) {
           const { loadTreeIndex } = await import('@/lib/treeIndex');
           const stored = loadTreeIndex(existing.docId);
@@ -129,7 +129,7 @@ export async function POST(request) {
         });
 
         // ── Save to registry so this docId is reused on next startup ─────────
-        registerDoc(filename, docId, saved.nodeCount);
+        await registerDoc(filename, docId, saved.nodeCount);
 
         emit(controller, {
           event:     'done',

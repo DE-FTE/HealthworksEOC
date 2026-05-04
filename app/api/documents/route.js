@@ -37,7 +37,7 @@ export async function GET() {
   try {
     const [files, registry, source] = await Promise.all([
       listPdfs(),
-      Promise.resolve(readRegistry()),
+      readRegistry(),
       Promise.resolve(getStorageInfo()),
     ]);
 
