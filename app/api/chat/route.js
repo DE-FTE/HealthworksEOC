@@ -52,9 +52,9 @@ const MAX_NODES_PER_DOC = parseInt(process.env.MAX_NODES_PER_QUERY || '6', 10);
 // 6 nodes per doc — restored to richer context now that smart filtering reduces doc count
 const MAX_DOCS_TO_QUERY = parseInt(process.env.MAX_DOCS_TO_QUERY   || '5', 10);
 // Max 5 docs — but smart scoring means specific queries only hit 2-3 docs anyway
-const MAX_CONTEXT_CHARS = parseInt(process.env.MAX_CONTEXT_CHARS   || '120000', 10);
-// 120k chars: multi-benefit × multi-doc queries need ~60k per doc (15 pages × 4k chars).
-// GPT-4o 128k token limit is not a concern — 120k chars ≈ 30k tokens, well within limit.
+const MAX_CONTEXT_CHARS = parseInt(process.env.MAX_CONTEXT_CHARS   || '90000', 10);
+// 90k chars ≈ 21k context tokens + 4k overhead = ~25k total, safely under the 30k TPM limit.
+// 2-doc queries get 45k/doc = ~12-13 pages per doc without truncation.
 
 // ─── PHASE 0: Query rewriting + type classification ───────────────────────────
 
