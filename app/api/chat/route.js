@@ -30,6 +30,7 @@
 import OpenAI from 'openai';
 import {
   loadTreeIndex,
+  ensureTreeIndex,
   flattenAllNodes,
   buildNodeDirectory,
   getNodeContents,
@@ -411,6 +412,9 @@ export async function POST(request) {
 
     if (!message?.trim()) return Response.json({ error: 'Message required.' }, { status: 400 });
     if (!docIds.length)    return Response.json({ error: 'No documents loaded.' }, { status: 400 });
+
+    // Ensure tree indices are in /tmp — fetches from Blob on cold starts where /tmp is empty
+    await Promise.all(docIds.map(id => ensureTreeIndex(id)));
 
     // Load all indexed docs
     const allLoadedDocs = docIds

@@ -35,7 +35,7 @@
 import { parsePdf }          from 'pageindex';
 import { v4 as uuidv4 }      from 'uuid';
 import { fetchPdfBuffer }    from '@/lib/pdfStorage';
-import { saveTreeIndex }     from '@/lib/treeIndex';
+import { saveTreeIndex, saveTreeIndexToBlob, ensureTreeIndex } from '@/lib/treeIndex';
 import { registerDoc, getRegistered } from '@/lib/indexRegistry';
 
 // Allow up to 60 s on Vercel Pro — large PDFs can exceed the 10 s default.
@@ -73,10 +73,11 @@ export async function POST(request) {
         //
         const existing = await getRegistered(filename);
         if (existing?.docId) {
+          // Try /tmp first, then Blob (handles Vercel cold starts where /tmp is empty)
+          await ensureTreeIndex(existing.docId);
           const { loadTreeIndex } = await import('@/lib/treeIndex');
           const stored = loadTreeIndex(existing.docId);
           if (stored) {
-            // Tree index still in /tmp — return immediately, no re-indexing needed
             emit(controller, { event: 'progress', stage: 1, message: 'Loading from registry…' });
             emit(controller, {
               event:     'done',
@@ -88,7 +89,7 @@ export async function POST(request) {
             });
             safeClose(); return;
           }
-          // /tmp was cleared (e.g. Vercel cold start) — re-index below
+          // Not in /tmp or Blob — fall through and re-index
         }
 
         // ── Stage 1: Fetch PDF from storage ──────────────────────────────────
@@ -130,6 +131,10 @@ export async function POST(request) {
           docName:   pdfInfo.title || filename,
           structure,
         });
+
+        // ── Persist to Blob so other Vercel instances can load it ────────────
+        // saveTreeIndexToBlob is a no-op when PDF_SOURCE !== 'vercel-blob'
+        await saveTreeIndexToBlob(docId, saved);
 
         // ── Save to registry so this docId is reused on next startup ─────────
         await registerDoc(filename, docId, saved.nodeCount);
