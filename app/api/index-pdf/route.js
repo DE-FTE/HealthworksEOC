@@ -38,6 +38,9 @@ import { fetchPdfBuffer }    from '@/lib/pdfStorage';
 import { saveTreeIndex }     from '@/lib/treeIndex';
 import { registerDoc, getRegistered } from '@/lib/indexRegistry';
 
+// Allow up to 60 s on Vercel Pro — large PDFs can exceed the 10 s default.
+export const maxDuration = 60;
+
 const PAGES_PER_NODE = parseInt(process.env.PAGES_PER_NODE || '1', 10);
 
 export async function POST(request) {
