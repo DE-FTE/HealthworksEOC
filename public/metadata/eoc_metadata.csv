@@ -1,543 +1,543 @@
 SALES_REGION,STATE,COUNTY,PDF_NAME,PAYOR,PLAN_TYPE,SNP_TYPE,PLAN_NAME
-All,Arizona,Maricopa,H1822-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,Arizona,Maricopa,H1822-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,Arizona,Maricopa,H1822-005-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace (HMO-POS I-SNP)
-All,Arizona,Maricopa,H1822-006-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,Arizona,Maricopa,H1822-007-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,Arizona,Maricopa,H1822-008-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace Together (HMO-POS I-SNP)
-All,Arizona,Pima,H1822-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,Arizona,Pima,H1822-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,Arizona,Pima,H1822-005-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace (HMO-POS I-SNP)
-All,Arizona,Pima,H1822-006-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,Arizona,Pima,H1822-007-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,Arizona,Pima,H1822-008-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace Together (HMO-POS I-SNP)
-All,Arizona,Pinal,H1822-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,Arizona,Pinal,H1822-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,Arizona,Pinal,H1822-007-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Alameda,H5425-075-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Alameda,H5425-076-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Alameda,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Alameda,H5425-110-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Alameda,H5425-124-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Compass (HMO)
-All,California,Fresno,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Fresno,H5425-101-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Fresno,H5425-102-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Fresno,H5425-119-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Kings,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Kings,H5425-101-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Kings,H5425-102-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Kings,H5425-119-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Los Angeles,H0976-001-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections (HMO D-SNP)
-All,California,Los Angeles,H0976-002-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections at Home (HMO D-SNP)
-All,California,Los Angeles,H5425-006-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Los Angeles,H5425-034-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Los Angeles,H5425-065-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Prime (HMO)
-All,California,Los Angeles,H5425-084-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Venture (HMO)
-All,California,Los Angeles,H5425-086-000.pdf,SCAN Group,HMO,Institutional,SCAN Embrace (HMO I-SNP)
-All,California,Los Angeles,H5425-092-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO)
-All,California,Los Angeles,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Los Angeles,H5425-100-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Inspired by women for women (HMO)
-All,California,Los Angeles,H5425-108-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Los Angeles,H5425-123-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Allied (HMO)
-All,California,Los Angeles,H5425-131-000.pdf,SCAN Group,HMO,Institutional,SCAN Embrace Together (HMO I-SNP)
-All,California,Los Angeles,H5425-133-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Essential Savings (HMO)
-All,California,Los Angeles,H5943-004-000.pdf,SCAN Group,HMO-POS,Chronic or Disabling Condition,VillageHealth (HMO-POS C-SNP)
-All,California,Madera,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Madera,H5425-101-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Madera,H5425-102-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Madera,H5425-119-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Orange,H5425-007-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Orange,H5425-034-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Orange,H5425-065-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Prime (HMO)
-All,California,Orange,H5425-084-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Venture (HMO)
-All,California,Orange,H5425-087-000.pdf,SCAN Group,HMO,Institutional,SCAN Embrace (HMO I-SNP)
-All,California,Orange,H5425-092-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO)
-All,California,Orange,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Orange,H5425-100-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Inspired by women for women (HMO)
-All,California,Orange,H5425-108-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Orange,H5425-131-000.pdf,SCAN Group,HMO,Institutional,SCAN Embrace Together (HMO I-SNP)
-All,California,Placer,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Placer,H5425-126-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO)"
-All,California,Placer,H5425-128-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Placer,H5425-129-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Placer,H5425-130-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Riverside,H0976-001-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections (HMO D-SNP)
-All,California,Riverside,H0976-002-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections at Home (HMO D-SNP)
-All,California,Riverside,H5425-008-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Riverside,H5425-085-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Venture (HMO)
-All,California,Riverside,H5425-092-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO)
-All,California,Riverside,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Riverside,H5425-104-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Riverside,H5425-108-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Riverside,H5425-135-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Desert Choice (HMO)
-All,California,Riverside,H5943-003-000.pdf,SCAN Group,HMO-POS,Chronic or Disabling Condition,VillageHealth (HMO-POS C-SNP)
-All,California,Sacramento,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Sacramento,H5425-126-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO)"
-All,California,Sacramento,H5425-128-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Sacramento,H5425-129-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Sacramento,H5425-130-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,San Bernardino,H0976-001-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections (HMO D-SNP)
-All,California,San Bernardino,H0976-002-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections at Home (HMO D-SNP)
-All,California,San Bernardino,H5425-009-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,San Bernardino,H5425-065-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Prime (HMO)
-All,California,San Bernardino,H5425-085-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Venture (HMO)
-All,California,San Bernardino,H5425-091-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace (HMO-POS I-SNP)
-All,California,San Bernardino,H5425-092-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO)
-All,California,San Bernardino,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,San Bernardino,H5425-104-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,San Bernardino,H5425-108-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,San Bernardino,H5425-132-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace Together (HMO-POS I-SNP)
-All,California,San Bernardino,H5943-003-000.pdf,SCAN Group,HMO-POS,Chronic or Disabling Condition,VillageHealth (HMO-POS C-SNP)
-All,California,San Diego,H0976-001-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections (HMO D-SNP)
-All,California,San Diego,H0976-002-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections at Home (HMO D-SNP)
-All,California,San Diego,H5425-005-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,San Diego,H5425-082-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Alta (HMO)
-All,California,San Diego,H5425-096-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO)
-All,California,San Diego,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,San Diego,H5425-105-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,San Diego,H5425-109-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,San Diego,H5425-134-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Select (HMO)
-All,California,San Francisco,H5425-019-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,San Francisco,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,San Francisco,H5425-106-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,San Francisco,H5425-107-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO)
-All,California,San Francisco,H5425-118-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Allied (HMO)
-All,California,San Francisco,H5425-121-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,San Joaquin,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,San Joaquin,H5425-127-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO)"
-All,California,San Joaquin,H5425-128-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,San Joaquin,H5425-129-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,San Joaquin,H5425-130-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,San Mateo,H5425-075-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,San Mateo,H5425-076-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,San Mateo,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,San Mateo,H5425-110-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,San Mateo,H5425-118-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Allied (HMO)
-All,California,Santa Clara,H5425-069-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Santa Clara,H5425-070-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Santa Clara,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Santa Clara,H5425-120-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Stanislaus,H5425-069-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Stanislaus,H5425-070-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Stanislaus,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Stanislaus,H5425-120-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Stanislaus,H5425-125-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO)"
-All,California,Tulare,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Tulare,H5425-101-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Tulare,H5425-102-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Tulare,H5425-119-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,California,Ventura,H5425-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Ventura,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Yolo,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,California,Yolo,H5425-126-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO)"
-All,California,Yolo,H5425-128-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,California,Yolo,H5425-129-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,California,Yolo,H5425-130-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,New Mexico,Bernalillo,H5244-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,New Mexico,Bernalillo,H5244-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,New Mexico,Bernalillo,H5244-004-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,New Mexico,Bernalillo,H5244-005-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,New Mexico,Sandoval,H5244-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,New Mexico,Sandoval,H5244-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,New Mexico,Sandoval,H5244-004-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,New Mexico,Sandoval,H5244-005-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,Nevada,Clark,H0978-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,Nevada,Clark,H0978-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,Nevada,Clark,H0978-010-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP)
-All,Nevada,Clark,H0978-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO)
-All,Nevada,Nye,H0978-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO)
-All,Nevada,Nye,H0978-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP)
-All,Texas,Bexar,H8902-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance Texas (HMO C-SNP)
-All,Texas,Bexar,H8902-009-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive Texas (HMO C-SNP)
-All,Texas,Bexar,H8902-010-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic Texas (HMO)
-All,Texas,Bexar,H8902-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice Texas (HMO)
-All,Texas,Fort Bend,H8902-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance Texas (HMO C-SNP)
-All,Texas,Fort Bend,H8902-009-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive Texas (HMO C-SNP)
-All,Texas,Fort Bend,H8902-010-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic Texas (HMO)
-All,Texas,Fort Bend,H8902-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice Texas (HMO)
-All,Texas,Harris,H8902-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance Texas (HMO C-SNP)
-All,Texas,Harris,H8902-009-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive Texas (HMO C-SNP)
-All,Texas,Harris,H8902-010-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic Texas (HMO)
-All,Texas,Harris,H8902-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice Texas (HMO)
-All,Texas,Montgomery,H8902-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance Texas (HMO C-SNP)
-All,Texas,Montgomery,H8902-009-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive Texas (HMO C-SNP)
-All,Texas,Montgomery,H8902-010-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic Texas (HMO)
-All,Texas,Montgomery,H8902-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice Texas (HMO)
-All,Washington,Pierce,H4026-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic WA (HMO)
-All,Washington,Pierce,H4026-002-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice WA (HMO)
-All,Washington,Spokane,H4026-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic WA (HMO)
-All,Washington,Spokane,H4026-002-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice WA (HMO)
-All,Washington,Thurston,H4026-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic WA (HMO)
-All,Washington,Thurston,H4026-002-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice WA (HMO)
-All,New York,Bronx,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,Bronx,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP)
-All,New York,Bronx,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO)
-All,New York,Bronx,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO)
-All,New York,Bronx,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP)
-All,New York,Bronx,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO)
-All,New York,Bronx,H3312-002-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature (HMO)
-All,New York,Bronx,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP)
-All,New York,Bronx,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO)
-All,New York,Bronx,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP)
-All,New York,Bronx,H3312-091-000.pdf,CVS Health Corporation,HMO,Chronic or Disabling Condition,Aetna Medicare Chronic Care (HMO C-SNP)
-All,New York,Bronx,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO)
-All,New York,Bronx,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO)
-All,New York,Bronx,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO)
-All,New York,Bronx,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP)
-All,New York,Bronx,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP)
-All,New York,Bronx,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP)
-All,New York,Bronx,H3379-001-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0005 (HMO-POS)
-All,New York,Bronx,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS)
-All,New York,Bronx,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,Bronx,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,Bronx,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,Bronx,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO)
-All,New York,Bronx,H3533-034-002.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP)
-All,New York,Bronx,H3533-035-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus H3533-035 (HMO)
-All,New York,Bronx,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,Bronx,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS)
-All,New York,Bronx,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,Bronx,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO)
-All,New York,Bronx,H5521-121-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO)
-All,New York,Bronx,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,Bronx,H5521-457-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced Extra (PPO)
-All,New York,Bronx,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,Bronx,H5521-698-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO)
-All,New York,Bronx,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS)
-All,New York,Bronx,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,Bronx,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS)
-All,New York,Bronx,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,Bronx,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,Bronx,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO)
-All,New York,Bronx,H5970-028-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-028 (PPO)
-All,New York,Bronx,H5970-031-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice Giveback (PPO)
-All,New York,Bronx,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO)
-All,New York,Bronx,H5991-010-000.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Reserve (HMO D-SNP)
-All,New York,Bronx,H5991-012-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP)
-All,New York,Bronx,H5991-013-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP)
-All,New York,Bronx,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO)
-All,New York,Erie,H2001-063-001.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,Erie,H2292-001-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F001 (PPO I-SNP)
-All,New York,Erie,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO)
-All,New York,Erie,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO)
-All,New York,Erie,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP)
-All,New York,Erie,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO)
-All,New York,Erie,H2816-013-000.pdf,Centene Corporation,PFFS,Non-SNP,Wellcare Premium Ultra (PFFS)
-All,New York,Erie,H2816-019-000.pdf,Centene Corporation,PFFS,Non-SNP,Wellcare Premium Enhanced (PFFS)
-All,New York,Erie,H2816-037-000.pdf,Centene Corporation,PFFS *,Non-SNP,Wellcare Advantage Enhanced (PFFS)
-All,New York,Erie,H2816-038-000.pdf,Centene Corporation,PFFS *,Non-SNP,Wellcare Advantage Simple (PFFS)
-All,New York,Erie,H3312-065-000.pdf,CVS Health Corporation,HMO-POS,Non-SNP,Aetna Medicare Signature (HMO-POS)
-All,New York,Erie,H3312-070-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual (HMO D-SNP)
-All,New York,Erie,H3312-089-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual (HMO D-SNP)
-All,New York,Erie,H3344-013-000.pdf,"Independent Health Association, Inc.",Local PPO,Non-SNP,Independent Health's Medicare Passport Connect (PPO)
-All,New York,Erie,H3362-016-000.pdf,"Independent Health Association, Inc.",HMO *,Non-SNP,Independent Health's Encompass 65 (HMO)
-All,New York,Erie,H3362-020-000.pdf,"Independent Health Association, Inc.",HMO,Institutional,Independent Health's Medicare Family Choice (HMO I-SNP)
-All,New York,Erie,H3362-040-000.pdf,"Independent Health Association, Inc.",HMO,Chronic or Disabling Condition,Independent Health's Assure Advantage (HMO C-SNP)
-All,New York,Erie,H3362-042-000.pdf,"Independent Health Association, Inc.",HMO,Non-SNP,Independent Health's Encompass 65 RED 042 (HMO)
-All,New York,Erie,H3362-043-000.pdf,"Independent Health Association, Inc.",HMO,Non-SNP,Independent Health's Encompass 65 RED 043 (HMO)
-All,New York,Erie,H3362-044-000.pdf,"Independent Health Association, Inc.",HMO,Non-SNP,Independent Health's Encompass 65 RED 044 (HMO)
-All,New York,Erie,H3379-040-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0007 (HMO-POS)
-All,New York,Erie,H3379-053-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Chronic or Disabling Condition,UHC Complete Care NY-30 (HMO-POS C-SNP)
-All,New York,Erie,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS)
-All,New York,Erie,H3384-019-000.pdf,Highmark Health,HMO,Non-SNP,Senior Blue 651 (HMO)
-All,New York,Erie,H3384-022-000.pdf,Highmark Health,HMO *,Non-SNP,Senior Blue 601 (HMO)
-All,New York,Erie,H3384-069-001.pdf,Highmark Health,HMO,Non-SNP,Community Blue Medicare HMO Signature (HMO)
-All,New York,Erie,H3384-070-001.pdf,Highmark Health,HMO,Non-SNP,Community Blue Medicare HMO Distinct (HMO)
-All,New York,Erie,H3384-071-000.pdf,Highmark Health,HMO,Non-SNP,Community Blue Medicare HMO Merit (HMO)
-All,New York,Erie,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,Erie,H3387-014-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,Erie,H3387-015-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,Erie,H3418-008-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Non-SNP,AARP Medicare Advantage from UHC NY-0019 (PPO)
-All,New York,Erie,H3533-002-000.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-002 (HMO D-SNP)
-All,New York,Erie,H4868-003-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Patriot Simple (HMO-POS)
-All,New York,Erie,H4868-004-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,Erie,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,Erie,H5521-215-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Signature (PPO)
-All,New York,Erie,H5521-323-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,Erie,H5521-381-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Premier (PPO)
-All,New York,Erie,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,Erie,H5526-004-000.pdf,Highmark Health,Local PPO,Non-SNP,Forever Blue 751 (PPO)
-All,New York,Erie,H5526-016-000.pdf,Highmark Health,Local PPO,Non-SNP,Forever Blue Value (PPO)
-All,New York,Erie,H5526-023-000.pdf,Highmark Health,Local PPO *,Non-SNP,Freedom Valor (PPO)
-All,New York,Erie,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS)
-All,New York,Erie,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,Erie,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS)
-All,New York,Erie,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,Erie,H5599-013-001.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,Erie,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO)
-All,New York,Erie,H5970-020-000.pdf,Humana Inc.,Local PPO,Dual-Eligible,HumanaChoice SNP-DE H5970-020 (PPO D-SNP)
-All,New York,Erie,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO)
-All,New York,Erie,H5970-030-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice Giveback H5970-030 (PPO)
-All,New York,Kings,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,Kings,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP)
-All,New York,Kings,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO)
-All,New York,Kings,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO)
-All,New York,Kings,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP)
-All,New York,Kings,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO)
-All,New York,Kings,H3312-002-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature (HMO)
-All,New York,Kings,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP)
-All,New York,Kings,H3312-073-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare FIDE Care (HMO D-SNP)
-All,New York,Kings,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO)
-All,New York,Kings,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP)
-All,New York,Kings,H3312-091-000.pdf,CVS Health Corporation,HMO,Chronic or Disabling Condition,Aetna Medicare Chronic Care (HMO C-SNP)
-All,New York,Kings,H3330-021-005.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold (HMO)
-All,New York,Kings,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO)
-All,New York,Kings,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO)
-All,New York,Kings,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO)
-All,New York,Kings,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP)
-All,New York,Kings,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP)
-All,New York,Kings,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP)
-All,New York,Kings,H3379-001-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0005 (HMO-POS)
-All,New York,Kings,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS)
-All,New York,Kings,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,Kings,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,Kings,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,Kings,H3418-001-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Non-SNP,AARP Medicare Advantage from UHC NY-0012 (PPO)
-All,New York,Kings,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO)
-All,New York,Kings,H3533-033-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus H3533-033 (HMO)
-All,New York,Kings,H3533-034-001.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP)
-All,New York,Kings,H3533-035-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus H3533-035 (HMO)
-All,New York,Kings,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,Kings,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS)
-All,New York,Kings,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,Kings,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO)
-All,New York,Kings,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,Kings,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,Kings,H5521-661-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO)
-All,New York,Kings,H5521-664-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced Extra (PPO)
-All,New York,Kings,H5521-698-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO)
-All,New York,Kings,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,Kings,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,Kings,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,Kings,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO)
-All,New York,Kings,H5970-028-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-028 (PPO)
-All,New York,Kings,H5970-031-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice Giveback (PPO)
-All,New York,Kings,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO)
-All,New York,Kings,H5991-010-000.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Reserve (HMO D-SNP)
-All,New York,Kings,H5991-012-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP)
-All,New York,Kings,H5991-013-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP)
-All,New York,Kings,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO)
-All,New York,Monroe,H2001-063-001.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,Monroe,H2292-001-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F001 (PPO I-SNP)
-All,New York,Monroe,H2816-037-000.pdf,Centene Corporation,PFFS *,Non-SNP,Wellcare Advantage Enhanced (PFFS)
-All,New York,Monroe,H2816-038-000.pdf,Centene Corporation,PFFS *,Non-SNP,Wellcare Advantage Simple (PFFS)
-All,New York,Monroe,H3312-087-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual (HMO D-SNP)
-All,New York,Monroe,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,Monroe,H3387-014-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,Monroe,H3387-015-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,Monroe,H3533-002-000.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-002 (HMO D-SNP)
-All,New York,Monroe,H4868-003-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Patriot Simple (HMO-POS)
-All,New York,Monroe,H4868-004-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,Monroe,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,Monroe,H5521-323-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,Monroe,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,Monroe,H5521-521-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO)
-All,New York,Monroe,H5521-522-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO)
-All,New York,Monroe,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,Monroe,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,Monroe,H5599-013-001.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,Monroe,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO)
-All,New York,Monroe,H5970-020-000.pdf,Humana Inc.,Local PPO,Dual-Eligible,HumanaChoice SNP-DE H5970-020 (PPO D-SNP)
-All,New York,Monroe,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO)
-All,New York,Monroe,H5970-030-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice Giveback H5970-030 (PPO)
-All,New York,Nassau,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,Nassau,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP)
-All,New York,Nassau,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO)
-All,New York,Nassau,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO)
-All,New York,Nassau,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP)
-All,New York,Nassau,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO)
-All,New York,Nassau,H3312-064-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Enhanced (HMO)
-All,New York,Nassau,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP)
-All,New York,Nassau,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO)
-All,New York,Nassau,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP)
-All,New York,Nassau,H3330-021-002.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold (HMO)
-All,New York,Nassau,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO)
-All,New York,Nassau,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO)
-All,New York,Nassau,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO)
-All,New York,Nassau,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP)
-All,New York,Nassau,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP)
-All,New York,Nassau,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP)
-All,New York,Nassau,H3379-043-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0009 (HMO-POS)
-All,New York,Nassau,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS)
-All,New York,Nassau,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,Nassau,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,Nassau,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,Nassau,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO)
-All,New York,Nassau,H3533-034-002.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP)
-All,New York,Nassau,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,Nassau,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,Nassau,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO)
-All,New York,Nassau,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,Nassau,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,Nassau,H5521-665-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO)
-All,New York,Nassau,H5521-674-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO)
-All,New York,Nassau,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,Nassau,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,Nassau,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,Nassau,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO)
-All,New York,Nassau,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO)
-All,New York,Nassau,H5970-032-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice GIveback (PPO)
-All,New York,Nassau,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO)
-All,New York,Nassau,H5991-012-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP)
-All,New York,Nassau,H5991-013-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP)
-All,New York,Nassau,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO)
-All,New York,New York,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,New York,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP)
-All,New York,New York,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO)
-All,New York,New York,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO)
-All,New York,New York,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP)
-All,New York,New York,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO)
-All,New York,New York,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP)
-All,New York,New York,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO)
-All,New York,New York,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP)
-All,New York,New York,H3312-091-000.pdf,CVS Health Corporation,HMO,Chronic or Disabling Condition,Aetna Medicare Chronic Care (HMO C-SNP)
-All,New York,New York,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO)
-All,New York,New York,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO)
-All,New York,New York,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO)
-All,New York,New York,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP)
-All,New York,New York,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP)
-All,New York,New York,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP)
-All,New York,New York,H3379-001-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0005 (HMO-POS)
-All,New York,New York,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS)
-All,New York,New York,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,New York,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,New York,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,New York,H3418-001-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Non-SNP,AARP Medicare Advantage from UHC NY-0012 (PPO)
-All,New York,New York,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO)
-All,New York,New York,H3533-034-001.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP)
-All,New York,New York,H3533-035-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus H3533-035 (HMO)
-All,New York,New York,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,New York,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS)
-All,New York,New York,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,New York,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,New York,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,New York,H5521-537-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO)
-All,New York,New York,H5521-662-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO)
-All,New York,New York,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS)
-All,New York,New York,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,New York,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS)
-All,New York,New York,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,New York,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,New York,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO)
-All,New York,New York,H5970-028-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-028 (PPO)
-All,New York,New York,H5970-031-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice Giveback (PPO)
-All,New York,New York,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO)
-All,New York,New York,H5991-010-000.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Reserve (HMO D-SNP)
-All,New York,New York,H5991-012-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP)
-All,New York,New York,H5991-013-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP)
-All,New York,New York,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO)
-All,New York,Richmond,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,Richmond,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP)
-All,New York,Richmond,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP)
-All,New York,Richmond,H3312-082-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Enhanced (HMO)
-All,New York,Richmond,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP)
-All,New York,Richmond,H3312-091-000.pdf,CVS Health Corporation,HMO,Chronic or Disabling Condition,Aetna Medicare Chronic Care (HMO C-SNP)
-All,New York,Richmond,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO)
-All,New York,Richmond,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO)
-All,New York,Richmond,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO)
-All,New York,Richmond,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP)
-All,New York,Richmond,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP)
-All,New York,Richmond,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP)
-All,New York,Richmond,H3379-001-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0005 (HMO-POS)
-All,New York,Richmond,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS)
-All,New York,Richmond,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,Richmond,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,Richmond,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,Richmond,H3533-034-002.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP)
-All,New York,Richmond,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,Richmond,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS)
-All,New York,Richmond,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,Richmond,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,Richmond,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,Richmond,H5521-536-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO)
-All,New York,Richmond,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS)
-All,New York,Richmond,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,Richmond,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS)
-All,New York,Richmond,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,Richmond,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,Richmond,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO)
-All,New York,Richmond,H5991-012-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP)
-All,New York,Richmond,H5991-013-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP)
-All,New York,Richmond,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO)
-All,New York,Suffolk,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,Suffolk,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP)
-All,New York,Suffolk,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO)
-All,New York,Suffolk,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO)
-All,New York,Suffolk,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP)
-All,New York,Suffolk,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO)
-All,New York,Suffolk,H3312-064-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Enhanced (HMO)
-All,New York,Suffolk,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP)
-All,New York,Suffolk,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP)
-All,New York,Suffolk,H3330-021-003.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold (HMO)
-All,New York,Suffolk,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO)
-All,New York,Suffolk,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO)
-All,New York,Suffolk,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP)
-All,New York,Suffolk,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,Suffolk,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,Suffolk,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,Suffolk,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO)
-All,New York,Suffolk,H3533-034-002.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP)
-All,New York,Suffolk,H4868-003-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Patriot Simple (HMO-POS)
-All,New York,Suffolk,H4868-004-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,Suffolk,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS)
-All,New York,Suffolk,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,Suffolk,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO)
-All,New York,Suffolk,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,Suffolk,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,Suffolk,H5521-665-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO)
-All,New York,Suffolk,H5521-674-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO)
-All,New York,Suffolk,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS)
-All,New York,Suffolk,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,Suffolk,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS)
-All,New York,Suffolk,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,Suffolk,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,Suffolk,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO)
-All,New York,Suffolk,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO)
-All,New York,Suffolk,H5970-032-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice GIveback (PPO)
-All,New York,Suffolk,H5991-012-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP)
-All,New York,Suffolk,H5991-013-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP)
-All,New York,Suffolk,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO)
-All,New York,Westchester,H1722-002-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO)
-All,New York,Westchester,H2001-063-001.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP)
-All,New York,Westchester,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP)
-All,New York,Westchester,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO)
-All,New York,Westchester,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO)
-All,New York,Westchester,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP)
-All,New York,Westchester,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO)
-All,New York,Westchester,H3312-018-000.pdf,CVS Health Corporation,HMO-POS,Non-SNP,Aetna Medicare Enhanced (HMO-POS)
-All,New York,Westchester,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP)
-All,New York,Westchester,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO)
-All,New York,Westchester,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP)
-All,New York,Westchester,H3330-021-003.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold (HMO)
-All,New York,Westchester,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO)
-All,New York,Westchester,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO)
-All,New York,Westchester,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP)
-All,New York,Westchester,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP)
-All,New York,Westchester,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP)
-All,New York,Westchester,H3379-059-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-34 (HMO-POS)
-All,New York,Westchester,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS)
-All,New York,Westchester,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP)
-All,New York,Westchester,H3387-014-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP)
-All,New York,Westchester,H3387-015-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP)
-All,New York,Westchester,H3418-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Non-SNP,AARP Medicare Advantage from UHC NY-0013 (PPO)
-All,New York,Westchester,H3533-002-000.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-002 (HMO D-SNP)
-All,New York,Westchester,H4868-003-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Patriot Simple (HMO-POS)
-All,New York,Westchester,H4868-004-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP)
-All,New York,Westchester,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS)
-All,New York,Westchester,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO)
-All,New York,Westchester,H5521-121-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO)
-All,New York,Westchester,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO)
-All,New York,Westchester,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP)
-All,New York,Westchester,H5521-699-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO)
-All,New York,Westchester,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS)
-All,New York,Westchester,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP)
-All,New York,Westchester,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS)
-All,New York,Westchester,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS)
-All,New York,Westchester,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP)
-All,New York,Westchester,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO)
-All,New York,Westchester,H5970-020-000.pdf,Humana Inc.,Local PPO,Dual-Eligible,HumanaChoice SNP-DE H5970-020 (PPO D-SNP)
-All,New York,Westchester,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO)
-All,New York,Westchester,H5970-030-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice Giveback H5970-030 (PPO)
-All,New York,Westchester,H5991-012-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP)
-All,New York,Westchester,H5991-013-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP)
-All,New York,Westchester,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO)
+All,Arizona,Maricopa,H1822-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H1822-001-000
+All,Arizona,Maricopa,H1822-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H1822-002-000
+All,Arizona,Maricopa,H1822-005-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace (HMO-POS I-SNP) H1822-005-000
+All,Arizona,Maricopa,H1822-006-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H1822-006-000
+All,Arizona,Maricopa,H1822-007-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H1822-007-000
+All,Arizona,Maricopa,H1822-008-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace Together (HMO-POS I-SNP) H1822-008-000
+All,Arizona,Pima,H1822-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H1822-001-000
+All,Arizona,Pima,H1822-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H1822-002-000
+All,Arizona,Pima,H1822-005-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace (HMO-POS I-SNP) H1822-005-000
+All,Arizona,Pima,H1822-006-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H1822-006-000
+All,Arizona,Pima,H1822-007-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H1822-007-000
+All,Arizona,Pima,H1822-008-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace Together (HMO-POS I-SNP) H1822-008-000
+All,Arizona,Pinal,H1822-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H1822-001-000
+All,Arizona,Pinal,H1822-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H1822-002-000
+All,Arizona,Pinal,H1822-007-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H1822-007-000
+All,California,Alameda,H5425-075-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-075-000
+All,California,Alameda,H5425-076-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-076-000
+All,California,Alameda,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Alameda,H5425-110-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-110-000
+All,California,Alameda,H5425-124-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Compass (HMO) H5425-124-000
+All,California,Fresno,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Fresno,H5425-101-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-101-000
+All,California,Fresno,H5425-102-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-102-000
+All,California,Fresno,H5425-119-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-119-000
+All,California,Kings,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Kings,H5425-101-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-101-000
+All,California,Kings,H5425-102-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-102-000
+All,California,Kings,H5425-119-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-119-000
+All,California,Los Angeles,H0976-001-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections (HMO D-SNP) H0976-001-000
+All,California,Los Angeles,H0976-002-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections at Home (HMO D-SNP) H0976-002-000
+All,California,Los Angeles,H5425-006-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-006-000
+All,California,Los Angeles,H5425-034-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-034-000
+All,California,Los Angeles,H5425-065-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Prime (HMO) H5425-065-000
+All,California,Los Angeles,H5425-084-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Venture (HMO) H5425-084-000
+All,California,Los Angeles,H5425-086-000.pdf,SCAN Group,HMO,Institutional,SCAN Embrace (HMO I-SNP) H5425-086-000
+All,California,Los Angeles,H5425-092-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO) H5425-092-000
+All,California,Los Angeles,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-097-000
+All,California,Los Angeles,H5425-100-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Inspired by women for women (HMO) H5425-100-000
+All,California,Los Angeles,H5425-108-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-108-000
+All,California,Los Angeles,H5425-123-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Allied (HMO) H5425-123-000
+All,California,Los Angeles,H5425-131-000.pdf,SCAN Group,HMO,Institutional,SCAN Embrace Together (HMO I-SNP) H5425-131-000
+All,California,Los Angeles,H5425-133-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Essential Savings (HMO) H5425-133-000
+All,California,Los Angeles,H5943-004-000.pdf,SCAN Group,HMO-POS,Chronic or Disabling Condition,VillageHealth (HMO-POS C-SNP) H5943-004-000
+All,California,Madera,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Madera,H5425-101-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-101-000
+All,California,Madera,H5425-102-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-102-000
+All,California,Madera,H5425-119-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-119-000
+All,California,Orange,H5425-007-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-007-000
+All,California,Orange,H5425-034-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-034-000
+All,California,Orange,H5425-065-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Prime (HMO) H5425-065-000
+All,California,Orange,H5425-084-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Venture (HMO) H5425-084-000
+All,California,Orange,H5425-087-000.pdf,SCAN Group,HMO,Institutional,SCAN Embrace (HMO I-SNP) H5425-087-000
+All,California,Orange,H5425-092-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO) H5425-092-000
+All,California,Orange,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-097-000
+All,California,Orange,H5425-100-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Inspired by women for women (HMO) H5425-100-000
+All,California,Orange,H5425-108-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-108-000
+All,California,Orange,H5425-131-000.pdf,SCAN Group,HMO,Institutional,SCAN Embrace Together (HMO I-SNP) H5425-131-000
+All,California,Placer,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Placer,H5425-126-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO) H5425-126-000"
+All,California,Placer,H5425-128-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-128-000
+All,California,Placer,H5425-129-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-129-000
+All,California,Placer,H5425-130-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-130-000
+All,California,Riverside,H0976-001-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections (HMO D-SNP) H0976-001-000
+All,California,Riverside,H0976-002-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections at Home (HMO D-SNP) H0976-002-000
+All,California,Riverside,H5425-008-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-008-000
+All,California,Riverside,H5425-085-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Venture (HMO) H5425-085-000
+All,California,Riverside,H5425-092-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO) H5425-092-000
+All,California,Riverside,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-097-000
+All,California,Riverside,H5425-104-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-104-000
+All,California,Riverside,H5425-108-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-108-000
+All,California,Riverside,H5425-135-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Desert Choice (HMO) H5425-135-000
+All,California,Riverside,H5943-003-000.pdf,SCAN Group,HMO-POS,Chronic or Disabling Condition,VillageHealth (HMO-POS C-SNP) H5943-003-000
+All,California,Sacramento,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Sacramento,H5425-126-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO) H5425-126-000"
+All,California,Sacramento,H5425-128-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-128-000
+All,California,Sacramento,H5425-129-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-129-000
+All,California,Sacramento,H5425-130-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-130-000
+All,California,San Bernardino,H0976-001-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections (HMO D-SNP) H0976-001-000
+All,California,San Bernardino,H0976-002-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections at Home (HMO D-SNP) H0976-002-000
+All,California,San Bernardino,H5425-009-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-009-000
+All,California,San Bernardino,H5425-065-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Prime (HMO) H5425-065-000
+All,California,San Bernardino,H5425-085-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Venture (HMO) H5425-085-000
+All,California,San Bernardino,H5425-091-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace (HMO-POS I-SNP) H5425-091-000
+All,California,San Bernardino,H5425-092-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO) H5425-092-000
+All,California,San Bernardino,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-097-000
+All,California,San Bernardino,H5425-104-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-104-000
+All,California,San Bernardino,H5425-108-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-108-000
+All,California,San Bernardino,H5425-132-000.pdf,SCAN Group,HMO-POS,Institutional,SCAN Embrace Together (HMO-POS I-SNP) H5425-132-000
+All,California,San Bernardino,H5943-003-000.pdf,SCAN Group,HMO-POS,Chronic or Disabling Condition,VillageHealth (HMO-POS C-SNP) H5943-003-000
+All,California,San Diego,H0976-001-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections (HMO D-SNP) H0976-001-000
+All,California,San Diego,H0976-002-000.pdf,SCAN Group,HMO,Dual-Eligible,SCAN Connections at Home (HMO D-SNP) H0976-002-000
+All,California,San Diego,H5425-005-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-005-000
+All,California,San Diego,H5425-082-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Alta (HMO) H5425-082-000
+All,California,San Diego,H5425-096-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO) H5425-096-000
+All,California,San Diego,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-097-000
+All,California,San Diego,H5425-105-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-105-000
+All,California,San Diego,H5425-109-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-109-000
+All,California,San Diego,H5425-134-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Select (HMO) H5425-134-000
+All,California,San Francisco,H5425-019-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-019-000
+All,California,San Francisco,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,San Francisco,H5425-106-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-106-000
+All,California,San Francisco,H5425-107-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Affirm partnered with Included LGBTQ+ Health (HMO) H5425-107-000
+All,California,San Francisco,H5425-118-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Allied (HMO) H5425-118-000
+All,California,San Francisco,H5425-121-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-121-000
+All,California,San Joaquin,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,San Joaquin,H5425-127-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO) H5425-127-000"
+All,California,San Joaquin,H5425-128-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-128-000
+All,California,San Joaquin,H5425-129-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-129-000
+All,California,San Joaquin,H5425-130-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-130-000
+All,California,San Mateo,H5425-075-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-075-000
+All,California,San Mateo,H5425-076-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-076-000
+All,California,San Mateo,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,San Mateo,H5425-110-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-110-000
+All,California,San Mateo,H5425-118-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Allied (HMO) H5425-118-000
+All,California,Santa Clara,H5425-069-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-069-000
+All,California,Santa Clara,H5425-070-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-070-000
+All,California,Santa Clara,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Santa Clara,H5425-120-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-120-000
+All,California,Stanislaus,H5425-069-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-069-000
+All,California,Stanislaus,H5425-070-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-070-000
+All,California,Stanislaus,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Stanislaus,H5425-120-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-120-000
+All,California,Stanislaus,H5425-125-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO) H5425-125-000"
+All,California,Tulare,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Tulare,H5425-101-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-101-000
+All,California,Tulare,H5425-102-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-102-000
+All,California,Tulare,H5425-119-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-119-000
+All,California,Ventura,H5425-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-001-000
+All,California,Ventura,H5425-097-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-097-000
+All,California,Yolo,H5425-098-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5425-098-000
+All,California,Yolo,H5425-126-000.pdf,SCAN Group,HMO,Non-SNP,"Sutter Senior Advantage, a SCAN Medicare Plan (HMO) H5425-126-000"
+All,California,Yolo,H5425-128-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5425-128-000
+All,California,Yolo,H5425-129-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5425-129-000
+All,California,Yolo,H5425-130-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5425-130-000
+All,New Mexico,Bernalillo,H5244-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5244-001-000
+All,New Mexico,Bernalillo,H5244-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5244-002-000
+All,New Mexico,Bernalillo,H5244-004-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5244-004-000
+All,New Mexico,Bernalillo,H5244-005-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5244-005-000
+All,New Mexico,Sandoval,H5244-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H5244-001-000
+All,New Mexico,Sandoval,H5244-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H5244-002-000
+All,New Mexico,Sandoval,H5244-004-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H5244-004-000
+All,New Mexico,Sandoval,H5244-005-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H5244-005-000
+All,Nevada,Clark,H0978-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H0978-001-000
+All,Nevada,Clark,H0978-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H0978-002-000
+All,Nevada,Clark,H0978-010-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive (HMO C-SNP) H0978-010-000
+All,Nevada,Clark,H0978-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice (HMO) H0978-011-000
+All,Nevada,Nye,H0978-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic (HMO) H0978-001-000
+All,Nevada,Nye,H0978-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance (HMO C-SNP) H0978-002-000
+All,Texas,Bexar,H8902-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance Texas (HMO C-SNP) H8902-002-000
+All,Texas,Bexar,H8902-009-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive Texas (HMO C-SNP) H8902-009-000
+All,Texas,Bexar,H8902-010-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic Texas (HMO) H8902-010-000
+All,Texas,Bexar,H8902-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice Texas (HMO) H8902-011-000
+All,Texas,Fort Bend,H8902-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance Texas (HMO C-SNP) H8902-002-000
+All,Texas,Fort Bend,H8902-009-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive Texas (HMO C-SNP) H8902-009-000
+All,Texas,Fort Bend,H8902-010-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic Texas (HMO) H8902-010-000
+All,Texas,Fort Bend,H8902-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice Texas (HMO) H8902-011-000
+All,Texas,Harris,H8902-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance Texas (HMO C-SNP) H8902-002-000
+All,Texas,Harris,H8902-009-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive Texas (HMO C-SNP) H8902-009-000
+All,Texas,Harris,H8902-010-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic Texas (HMO) H8902-010-000
+All,Texas,Harris,H8902-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice Texas (HMO) H8902-011-000
+All,Texas,Montgomery,H8902-002-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Balance Texas (HMO C-SNP) H8902-002-000
+All,Texas,Montgomery,H8902-009-000.pdf,SCAN Group,HMO,Chronic or Disabling Condition,SCAN Strive Texas (HMO C-SNP) H8902-009-000
+All,Texas,Montgomery,H8902-010-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic Texas (HMO) H8902-010-000
+All,Texas,Montgomery,H8902-011-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice Texas (HMO) H8902-011-000
+All,Washington,Pierce,H4026-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic WA (HMO) H4026-001-000
+All,Washington,Pierce,H4026-002-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice WA (HMO) H4026-002-000
+All,Washington,Spokane,H4026-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic WA (HMO) H4026-001-000
+All,Washington,Spokane,H4026-002-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice WA (HMO) H4026-002-000
+All,Washington,Thurston,H4026-001-000.pdf,SCAN Group,HMO,Non-SNP,SCAN Classic WA (HMO) H4026-001-000
+All,Washington,Thurston,H4026-002-000.pdf,SCAN Group,HMO,Non-SNP,SCAN MyChoice WA (HMO) H4026-002-000
+All,New York,Bronx,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-002
+All,New York,Bronx,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP) H2292-002-000
+All,New York,Bronx,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO) H2775-106-000
+All,New York,Bronx,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO) H2775-111-000
+All,New York,Bronx,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP) H2775-112-000
+All,New York,Bronx,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO) H2775-113-000
+All,New York,Bronx,H3312-002-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature (HMO) H3312-002-000
+All,New York,Bronx,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP) H3312-069-000
+All,New York,Bronx,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO) H3312-074-000
+All,New York,Bronx,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP) H3312-090-000
+All,New York,Bronx,H3312-091-000.pdf,CVS Health Corporation,HMO,Chronic or Disabling Condition,Aetna Medicare Chronic Care (HMO C-SNP) H3312-091-000
+All,New York,Bronx,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO) H3330-038-000
+All,New York,Bronx,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO) H3359-001-000
+All,New York,Bronx,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO) H3359-019-000
+All,New York,Bronx,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP) H3359-021-000
+All,New York,Bronx,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP) H3359-034-000
+All,New York,Bronx,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP) H3359-038-000
+All,New York,Bronx,H3379-001-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0005 (HMO-POS) H3379-001-000
+All,New York,Bronx,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS) H3379-060-000
+All,New York,Bronx,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,Bronx,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-002
+All,New York,Bronx,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-002
+All,New York,Bronx,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO) H3533-027-000
+All,New York,Bronx,H3533-034-002.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP) H3533-034-002
+All,New York,Bronx,H3533-035-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus H3533-035 (HMO) H3533-035-000
+All,New York,Bronx,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-014-000
+All,New York,Bronx,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS) H4868-016-000
+All,New York,Bronx,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,Bronx,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO) H5521-120-000
+All,New York,Bronx,H5521-121-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO) H5521-121-000
+All,New York,Bronx,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-320-000
+All,New York,Bronx,H5521-457-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced Extra (PPO) H5521-457-000
+All,New York,Bronx,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,Bronx,H5521-698-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO) H5521-698-000
+All,New York,Bronx,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS) H5599-002-000
+All,New York,Bronx,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,Bronx,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS) H5599-004-000
+All,New York,Bronx,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,Bronx,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-002
+All,New York,Bronx,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO) H5970-016-000
+All,New York,Bronx,H5970-028-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-028 (PPO) H5970-028-000
+All,New York,Bronx,H5970-031-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice Giveback (PPO) H5970-031-000
+All,New York,Bronx,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO) H5989-011-000
+All,New York,Bronx,H5991-010-000.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Reserve (HMO D-SNP) H5991-010-000
+All,New York,Bronx,H5991-012-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP) H5991-012-001
+All,New York,Bronx,H5991-013-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP) H5991-013-001
+All,New York,Bronx,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO) H9678-002-000
+All,New York,Erie,H2001-063-001.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-001
+All,New York,Erie,H2292-001-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F001 (PPO I-SNP) H2292-001-000
+All,New York,Erie,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO) H2775-106-000
+All,New York,Erie,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO) H2775-111-000
+All,New York,Erie,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP) H2775-112-000
+All,New York,Erie,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO) H2775-113-000
+All,New York,Erie,H2816-013-000.pdf,Centene Corporation,PFFS,Non-SNP,Wellcare Premium Ultra (PFFS) H2816-013-000
+All,New York,Erie,H2816-019-000.pdf,Centene Corporation,PFFS,Non-SNP,Wellcare Premium Enhanced (PFFS) H2816-019-000
+All,New York,Erie,H2816-037-000.pdf,Centene Corporation,PFFS *,Non-SNP,Wellcare Advantage Enhanced (PFFS) H2816-037-000
+All,New York,Erie,H2816-038-000.pdf,Centene Corporation,PFFS *,Non-SNP,Wellcare Advantage Simple (PFFS) H2816-038-000
+All,New York,Erie,H3312-065-000.pdf,CVS Health Corporation,HMO-POS,Non-SNP,Aetna Medicare Signature (HMO-POS) H3312-065-000
+All,New York,Erie,H3312-070-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual (HMO D-SNP) H3312-070-000
+All,New York,Erie,H3312-089-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual (HMO D-SNP) H3312-089-000
+All,New York,Erie,H3344-013-000.pdf,"Independent Health Association, Inc.",Local PPO,Non-SNP,Independent Health's Medicare Passport Connect (PPO) H3344-013-000
+All,New York,Erie,H3362-016-000.pdf,"Independent Health Association, Inc.",HMO *,Non-SNP,Independent Health's Encompass 65 (HMO) H3362-016-000
+All,New York,Erie,H3362-020-000.pdf,"Independent Health Association, Inc.",HMO,Institutional,Independent Health's Medicare Family Choice (HMO I-SNP) H3362-020-000
+All,New York,Erie,H3362-040-000.pdf,"Independent Health Association, Inc.",HMO,Chronic or Disabling Condition,Independent Health's Assure Advantage (HMO C-SNP) H3362-040-000
+All,New York,Erie,H3362-042-000.pdf,"Independent Health Association, Inc.",HMO,Non-SNP,Independent Health's Encompass 65 RED 042 (HMO) H3362-042-000
+All,New York,Erie,H3362-043-000.pdf,"Independent Health Association, Inc.",HMO,Non-SNP,Independent Health's Encompass 65 RED 043 (HMO) H3362-043-000
+All,New York,Erie,H3362-044-000.pdf,"Independent Health Association, Inc.",HMO,Non-SNP,Independent Health's Encompass 65 RED 044 (HMO) H3362-044-000
+All,New York,Erie,H3379-040-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0007 (HMO-POS) H3379-040-000
+All,New York,Erie,H3379-053-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Chronic or Disabling Condition,UHC Complete Care NY-30 (HMO-POS C-SNP) H3379-053-000
+All,New York,Erie,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS) H3379-060-000
+All,New York,Erie,H3384-019-000.pdf,Highmark Health,HMO,Non-SNP,Senior Blue 651 (HMO) H3384-019-000
+All,New York,Erie,H3384-022-000.pdf,Highmark Health,HMO *,Non-SNP,Senior Blue 601 (HMO) H3384-022-000
+All,New York,Erie,H3384-069-001.pdf,Highmark Health,HMO,Non-SNP,Community Blue Medicare HMO Signature (HMO) H3384-069-001
+All,New York,Erie,H3384-070-001.pdf,Highmark Health,HMO,Non-SNP,Community Blue Medicare HMO Distinct (HMO) H3384-070-001
+All,New York,Erie,H3384-071-000.pdf,Highmark Health,HMO,Non-SNP,Community Blue Medicare HMO Merit (HMO) H3384-071-000
+All,New York,Erie,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,Erie,H3387-014-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-001
+All,New York,Erie,H3387-015-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-001
+All,New York,Erie,H3418-008-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Non-SNP,AARP Medicare Advantage from UHC NY-0019 (PPO) H3418-008-000
+All,New York,Erie,H3533-002-000.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-002 (HMO D-SNP) H3533-002-000
+All,New York,Erie,H4868-003-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Patriot Simple (HMO-POS) H4868-003-000
+All,New York,Erie,H4868-004-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-004-000
+All,New York,Erie,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,Erie,H5521-215-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Signature (PPO) H5521-215-000
+All,New York,Erie,H5521-323-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-323-000
+All,New York,Erie,H5521-381-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Premier (PPO) H5521-381-000
+All,New York,Erie,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,Erie,H5526-004-000.pdf,Highmark Health,Local PPO,Non-SNP,Forever Blue 751 (PPO) H5526-004-000
+All,New York,Erie,H5526-016-000.pdf,Highmark Health,Local PPO,Non-SNP,Forever Blue Value (PPO) H5526-016-000
+All,New York,Erie,H5526-023-000.pdf,Highmark Health,Local PPO *,Non-SNP,Freedom Valor (PPO) H5526-023-000
+All,New York,Erie,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS) H5599-002-000
+All,New York,Erie,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,Erie,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS) H5599-004-000
+All,New York,Erie,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,Erie,H5599-013-001.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-001
+All,New York,Erie,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO) H5970-016-000
+All,New York,Erie,H5970-020-000.pdf,Humana Inc.,Local PPO,Dual-Eligible,HumanaChoice SNP-DE H5970-020 (PPO D-SNP) H5970-020-000
+All,New York,Erie,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO) H5970-029-000
+All,New York,Erie,H5970-030-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice Giveback H5970-030 (PPO) H5970-030-000
+All,New York,Kings,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-002
+All,New York,Kings,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP) H2292-002-000
+All,New York,Kings,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO) H2775-106-000
+All,New York,Kings,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO) H2775-111-000
+All,New York,Kings,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP) H2775-112-000
+All,New York,Kings,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO) H2775-113-000
+All,New York,Kings,H3312-002-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature (HMO) H3312-002-000
+All,New York,Kings,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP) H3312-069-000
+All,New York,Kings,H3312-073-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare FIDE Care (HMO D-SNP) H3312-073-000
+All,New York,Kings,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO) H3312-074-000
+All,New York,Kings,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP) H3312-090-000
+All,New York,Kings,H3312-091-000.pdf,CVS Health Corporation,HMO,Chronic or Disabling Condition,Aetna Medicare Chronic Care (HMO C-SNP) H3312-091-000
+All,New York,Kings,H3330-021-005.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold (HMO) H3330-021-005
+All,New York,Kings,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO) H3330-038-000
+All,New York,Kings,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO) H3359-001-000
+All,New York,Kings,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO) H3359-019-000
+All,New York,Kings,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP) H3359-021-000
+All,New York,Kings,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP) H3359-034-000
+All,New York,Kings,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP) H3359-038-000
+All,New York,Kings,H3379-001-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0005 (HMO-POS) H3379-001-000
+All,New York,Kings,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS) H3379-060-000
+All,New York,Kings,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,Kings,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-002
+All,New York,Kings,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-002
+All,New York,Kings,H3418-001-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Non-SNP,AARP Medicare Advantage from UHC NY-0012 (PPO) H3418-001-000
+All,New York,Kings,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO) H3533-027-000
+All,New York,Kings,H3533-033-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus H3533-033 (HMO) H3533-033-000
+All,New York,Kings,H3533-034-001.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP) H3533-034-001
+All,New York,Kings,H3533-035-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus H3533-035 (HMO) H3533-035-000
+All,New York,Kings,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-014-000
+All,New York,Kings,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS) H4868-016-000
+All,New York,Kings,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,Kings,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO) H5521-120-000
+All,New York,Kings,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-320-000
+All,New York,Kings,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,Kings,H5521-661-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO) H5521-661-000
+All,New York,Kings,H5521-664-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced Extra (PPO) H5521-664-000
+All,New York,Kings,H5521-698-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO) H5521-698-000
+All,New York,Kings,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,Kings,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,Kings,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-002
+All,New York,Kings,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO) H5970-016-000
+All,New York,Kings,H5970-028-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-028 (PPO) H5970-028-000
+All,New York,Kings,H5970-031-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice Giveback (PPO) H5970-031-000
+All,New York,Kings,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO) H5989-011-000
+All,New York,Kings,H5991-010-000.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Reserve (HMO D-SNP) H5991-010-000
+All,New York,Kings,H5991-012-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP) H5991-012-001
+All,New York,Kings,H5991-013-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP) H5991-013-001
+All,New York,Kings,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO) H9678-002-000
+All,New York,Monroe,H2001-063-001.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-001
+All,New York,Monroe,H2292-001-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F001 (PPO I-SNP) H2292-001-000
+All,New York,Monroe,H2816-037-000.pdf,Centene Corporation,PFFS *,Non-SNP,Wellcare Advantage Enhanced (PFFS) H2816-037-000
+All,New York,Monroe,H2816-038-000.pdf,Centene Corporation,PFFS *,Non-SNP,Wellcare Advantage Simple (PFFS) H2816-038-000
+All,New York,Monroe,H3312-087-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual (HMO D-SNP) H3312-087-000
+All,New York,Monroe,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,Monroe,H3387-014-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-001
+All,New York,Monroe,H3387-015-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-001
+All,New York,Monroe,H3533-002-000.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-002 (HMO D-SNP) H3533-002-000
+All,New York,Monroe,H4868-003-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Patriot Simple (HMO-POS) H4868-003-000
+All,New York,Monroe,H4868-004-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-004-000
+All,New York,Monroe,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,Monroe,H5521-323-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-323-000
+All,New York,Monroe,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,Monroe,H5521-521-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO) H5521-521-000
+All,New York,Monroe,H5521-522-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO) H5521-522-000
+All,New York,Monroe,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,Monroe,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,Monroe,H5599-013-001.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-001
+All,New York,Monroe,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO) H5970-016-000
+All,New York,Monroe,H5970-020-000.pdf,Humana Inc.,Local PPO,Dual-Eligible,HumanaChoice SNP-DE H5970-020 (PPO D-SNP) H5970-020-000
+All,New York,Monroe,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO) H5970-029-000
+All,New York,Monroe,H5970-030-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice Giveback H5970-030 (PPO) H5970-030-000
+All,New York,Nassau,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-002
+All,New York,Nassau,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP) H2292-002-000
+All,New York,Nassau,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO) H2775-106-000
+All,New York,Nassau,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO) H2775-111-000
+All,New York,Nassau,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP) H2775-112-000
+All,New York,Nassau,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO) H2775-113-000
+All,New York,Nassau,H3312-064-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Enhanced (HMO) H3312-064-000
+All,New York,Nassau,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP) H3312-069-000
+All,New York,Nassau,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO) H3312-074-000
+All,New York,Nassau,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP) H3312-090-000
+All,New York,Nassau,H3330-021-002.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold (HMO) H3330-021-002
+All,New York,Nassau,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO) H3330-038-000
+All,New York,Nassau,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO) H3359-001-000
+All,New York,Nassau,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO) H3359-019-000
+All,New York,Nassau,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP) H3359-021-000
+All,New York,Nassau,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP) H3359-034-000
+All,New York,Nassau,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP) H3359-038-000
+All,New York,Nassau,H3379-043-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0009 (HMO-POS) H3379-043-000
+All,New York,Nassau,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS) H3379-060-000
+All,New York,Nassau,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,Nassau,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-002
+All,New York,Nassau,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-002
+All,New York,Nassau,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO) H3533-027-000
+All,New York,Nassau,H3533-034-002.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP) H3533-034-002
+All,New York,Nassau,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-014-000
+All,New York,Nassau,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,Nassau,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO) H5521-120-000
+All,New York,Nassau,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-320-000
+All,New York,Nassau,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,Nassau,H5521-665-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO) H5521-665-000
+All,New York,Nassau,H5521-674-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO) H5521-674-000
+All,New York,Nassau,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,Nassau,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,Nassau,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-002
+All,New York,Nassau,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO) H5970-016-000
+All,New York,Nassau,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO) H5970-029-000
+All,New York,Nassau,H5970-032-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice GIveback (PPO) H5970-032-000
+All,New York,Nassau,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO) H5989-011-000
+All,New York,Nassau,H5991-012-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP) H5991-012-002
+All,New York,Nassau,H5991-013-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP) H5991-013-002
+All,New York,Nassau,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO) H9678-002-000
+All,New York,New York,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-002
+All,New York,New York,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP) H2292-002-000
+All,New York,New York,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO) H2775-106-000
+All,New York,New York,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO) H2775-111-000
+All,New York,New York,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP) H2775-112-000
+All,New York,New York,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO) H2775-113-000
+All,New York,New York,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP) H3312-069-000
+All,New York,New York,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO) H3312-074-000
+All,New York,New York,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP) H3312-090-000
+All,New York,New York,H3312-091-000.pdf,CVS Health Corporation,HMO,Chronic or Disabling Condition,Aetna Medicare Chronic Care (HMO C-SNP) H3312-091-000
+All,New York,New York,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO) H3330-038-000
+All,New York,New York,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO) H3359-001-000
+All,New York,New York,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO) H3359-019-000
+All,New York,New York,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP) H3359-021-000
+All,New York,New York,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP) H3359-034-000
+All,New York,New York,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP) H3359-038-000
+All,New York,New York,H3379-001-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0005 (HMO-POS) H3379-001-000
+All,New York,New York,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS) H3379-060-000
+All,New York,New York,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,New York,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-002
+All,New York,New York,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-002
+All,New York,New York,H3418-001-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Non-SNP,AARP Medicare Advantage from UHC NY-0012 (PPO) H3418-001-000
+All,New York,New York,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO) H3533-027-000
+All,New York,New York,H3533-034-001.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP) H3533-034-001
+All,New York,New York,H3533-035-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus H3533-035 (HMO) H3533-035-000
+All,New York,New York,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-014-000
+All,New York,New York,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS) H4868-016-000
+All,New York,New York,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,New York,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-320-000
+All,New York,New York,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,New York,H5521-537-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO) H5521-537-000
+All,New York,New York,H5521-662-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO) H5521-662-000
+All,New York,New York,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS) H5599-002-000
+All,New York,New York,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,New York,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS) H5599-004-000
+All,New York,New York,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,New York,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-002
+All,New York,New York,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO) H5970-016-000
+All,New York,New York,H5970-028-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-028 (PPO) H5970-028-000
+All,New York,New York,H5970-031-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice Giveback (PPO) H5970-031-000
+All,New York,New York,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO) H5989-011-000
+All,New York,New York,H5991-010-000.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Reserve (HMO D-SNP) H5991-010-000
+All,New York,New York,H5991-012-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP) H5991-012-001
+All,New York,New York,H5991-013-001.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP) H5991-013-001
+All,New York,New York,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO) H9678-002-000
+All,New York,Richmond,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-002
+All,New York,Richmond,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP) H2292-002-000
+All,New York,Richmond,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP) H3312-069-000
+All,New York,Richmond,H3312-082-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Enhanced (HMO) H3312-082-000
+All,New York,Richmond,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP) H3312-090-000
+All,New York,Richmond,H3312-091-000.pdf,CVS Health Corporation,HMO,Chronic or Disabling Condition,Aetna Medicare Chronic Care (HMO C-SNP) H3312-091-000
+All,New York,Richmond,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO) H3330-038-000
+All,New York,Richmond,H3359-001-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst 65 Plus Plan (HMO) H3359-001-000
+All,New York,Richmond,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO) H3359-019-000
+All,New York,Richmond,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP) H3359-021-000
+All,New York,Richmond,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP) H3359-034-000
+All,New York,Richmond,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP) H3359-038-000
+All,New York,Richmond,H3379-001-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-0005 (HMO-POS) H3379-001-000
+All,New York,Richmond,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS) H3379-060-000
+All,New York,Richmond,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,Richmond,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-002
+All,New York,Richmond,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-002
+All,New York,Richmond,H3533-034-002.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP) H3533-034-002
+All,New York,Richmond,H4868-014-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-014-000
+All,New York,Richmond,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS) H4868-016-000
+All,New York,Richmond,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,Richmond,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-320-000
+All,New York,Richmond,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,Richmond,H5521-536-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO) H5521-536-000
+All,New York,Richmond,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS) H5599-002-000
+All,New York,Richmond,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,Richmond,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS) H5599-004-000
+All,New York,Richmond,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,Richmond,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-002
+All,New York,Richmond,H5989-011-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO) H5989-011-000
+All,New York,Richmond,H5991-012-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP) H5991-012-002
+All,New York,Richmond,H5991-013-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP) H5991-013-002
+All,New York,Richmond,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO) H9678-002-000
+All,New York,Suffolk,H2001-063-002.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-002
+All,New York,Suffolk,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP) H2292-002-000
+All,New York,Suffolk,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO) H2775-106-000
+All,New York,Suffolk,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO) H2775-111-000
+All,New York,Suffolk,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP) H2775-112-000
+All,New York,Suffolk,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO) H2775-113-000
+All,New York,Suffolk,H3312-064-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Enhanced (HMO) H3312-064-000
+All,New York,Suffolk,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP) H3312-069-000
+All,New York,Suffolk,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP) H3312-090-000
+All,New York,Suffolk,H3330-021-003.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold (HMO) H3330-021-003
+All,New York,Suffolk,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO) H3330-038-000
+All,New York,Suffolk,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO) H3359-019-000
+All,New York,Suffolk,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP) H3359-021-000
+All,New York,Suffolk,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,Suffolk,H3387-014-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-002
+All,New York,Suffolk,H3387-015-002.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-002
+All,New York,Suffolk,H3533-027-000.pdf,Humana Inc.,HMO,Non-SNP,Humana Gold Plus Giveback H3533-027 (HMO) H3533-027-000
+All,New York,Suffolk,H3533-034-002.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-034 (HMO D-SNP) H3533-034-002
+All,New York,Suffolk,H4868-003-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Patriot Simple (HMO-POS) H4868-003-000
+All,New York,Suffolk,H4868-004-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-004-000
+All,New York,Suffolk,H4868-016-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Assist (HMO-POS) H4868-016-000
+All,New York,Suffolk,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,Suffolk,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO) H5521-120-000
+All,New York,Suffolk,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-320-000
+All,New York,Suffolk,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,Suffolk,H5521-665-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO) H5521-665-000
+All,New York,Suffolk,H5521-674-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO) H5521-674-000
+All,New York,Suffolk,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS) H5599-002-000
+All,New York,Suffolk,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,Suffolk,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS) H5599-004-000
+All,New York,Suffolk,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,Suffolk,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-002
+All,New York,Suffolk,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO) H5970-016-000
+All,New York,Suffolk,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO) H5970-029-000
+All,New York,Suffolk,H5970-032-000.pdf,Humana Inc.,Local PPO,Non-SNP,Humana Direct Choice GIveback (PPO) H5970-032-000
+All,New York,Suffolk,H5991-012-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP) H5991-012-002
+All,New York,Suffolk,H5991-013-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP) H5991-013-002
+All,New York,Suffolk,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO) H9678-002-000
+All,New York,Westchester,H1722-002-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Signature (HMO) H1722-002-000
+All,New York,Westchester,H2001-063-001.pdf,"UnitedHealth Group, Inc.",Local PPO,Dual-Eligible,UHC Dual Complete NY-S001 (PPO D-SNP) H2001-063-001
+All,New York,Westchester,H2292-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Institutional,UHC Nursing Home Plan NY-F002 (PPO I-SNP) H2292-002-000
+All,New York,Westchester,H2775-106-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Simple Open (PPO) H2775-106-000
+All,New York,Westchester,H2775-111-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Giveback Open (PPO) H2775-111-000
+All,New York,Westchester,H2775-112-000.pdf,Centene Corporation,Local PPO,Dual-Eligible,Wellcare Dual Access Open (PPO D-SNP) H2775-112-000
+All,New York,Westchester,H2775-113-000.pdf,Centene Corporation,Local PPO,Non-SNP,Wellcare Assist Open (PPO) H2775-113-000
+All,New York,Westchester,H3312-018-000.pdf,CVS Health Corporation,HMO-POS,Non-SNP,Aetna Medicare Enhanced (HMO-POS) H3312-018-000
+All,New York,Westchester,H3312-069-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Full Dual Care (HMO D-SNP) H3312-069-000
+All,New York,Westchester,H3312-074-000.pdf,CVS Health Corporation,HMO,Non-SNP,Aetna Medicare Signature Care (HMO) H3312-074-000
+All,New York,Westchester,H3312-090-000.pdf,CVS Health Corporation,HMO,Dual-Eligible,Aetna Medicare Partial Dual Care (HMO D-SNP) H3312-090-000
+All,New York,Westchester,H3330-021-003.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold (HMO) H3330-021-003
+All,New York,Westchester,H3330-038-000.pdf,"EmblemHealth, Inc.",HMO,Non-SNP,EmblemHealth VIP Gold Plus (HMO) H3330-038-000
+All,New York,Westchester,H3359-019-000.pdf,"Healthfirst, Inc.",HMO,Non-SNP,Healthfirst Increased Benefits Plan (HMO) H3359-019-000
+All,New York,Westchester,H3359-021-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Life Improvement Plan (HMO D-SNP) H3359-021-000
+All,New York,Westchester,H3359-034-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst CompleteCare (HMO D-SNP) H3359-034-000
+All,New York,Westchester,H3359-038-000.pdf,"Healthfirst, Inc.",HMO,Dual-Eligible,Healthfirst Connection Plan (HMO D-SNP) H3359-038-000
+All,New York,Westchester,H3379-059-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Non-SNP,AARP Medicare Advantage from UHC NY-34 (HMO-POS) H3379-059-000
+All,New York,Westchester,H3379-060-000.pdf,"UnitedHealth Group, Inc.",HMO-POS *,Non-SNP,AARP Medicare Advantage Patriot No Rx NY-MA3 (HMO-POS) H3379-060-000
+All,New York,Westchester,H3387-013-000.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Y001 (HMO-POS D-SNP) H3387-013-000
+All,New York,Westchester,H3387-014-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-S002 (HMO-POS D-SNP) H3387-014-001
+All,New York,Westchester,H3387-015-001.pdf,"UnitedHealth Group, Inc.",HMO-POS,Dual-Eligible,UHC Dual Complete NY-Q001 (HMO-POS D-SNP) H3387-015-001
+All,New York,Westchester,H3418-002-000.pdf,"UnitedHealth Group, Inc.",Local PPO,Non-SNP,AARP Medicare Advantage from UHC NY-0013 (PPO) H3418-002-000
+All,New York,Westchester,H3533-002-000.pdf,Humana Inc.,HMO,Dual-Eligible,Humana Gold Plus SNP-DE H3533-002 (HMO D-SNP) H3533-002-000
+All,New York,Westchester,H4868-003-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Patriot Simple (HMO-POS) H4868-003-000
+All,New York,Westchester,H4868-004-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Dual Access (HMO D-SNP) H4868-004-000
+All,New York,Westchester,H4868-019-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Simple (HMO-POS) H4868-019-000
+All,New York,Westchester,H5521-120-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite (PPO) H5521-120-000
+All,New York,Westchester,H5521-121-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Enhanced (PPO) H5521-121-000
+All,New York,Westchester,H5521-320-000.pdf,CVS Health Corporation,Local PPO *,Non-SNP,Aetna Medicare Eagle Giveback (PPO) H5521-320-000
+All,New York,Westchester,H5521-461-000.pdf,CVS Health Corporation,Local PPO,Institutional,Aetna Medicare Longevity (PPO I-SNP) H5521-461-000
+All,New York,Westchester,H5521-699-000.pdf,CVS Health Corporation,Local PPO,Non-SNP,Aetna Medicare Elite Extra (PPO) H5521-699-000
+All,New York,Westchester,H5599-002-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Assist (HMO-POS) H5599-002-000
+All,New York,Westchester,H5599-003-000.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Align (HMO D-SNP) H5599-003-000
+All,New York,Westchester,H5599-004-000.pdf,Centene Corporation,HMO-POS,Non-SNP,Wellcare Fidelis Simple (HMO-POS) H5599-004-000
+All,New York,Westchester,H5599-010-000.pdf,Centene Corporation,HMO-POS *,Non-SNP,Wellcare Fidelis Patriot Simple (HMO-POS) H5599-010-000
+All,New York,Westchester,H5599-013-002.pdf,Centene Corporation,HMO,Dual-Eligible,Wellcare Fidelis Dual Liberty Sync (HMO D-SNP) H5599-013-002
+All,New York,Westchester,H5970-016-000.pdf,Humana Inc.,Local PPO *,Non-SNP,Humana USAA Honor Giveback (PPO) H5970-016-000
+All,New York,Westchester,H5970-020-000.pdf,Humana Inc.,Local PPO,Dual-Eligible,HumanaChoice SNP-DE H5970-020 (PPO D-SNP) H5970-020-000
+All,New York,Westchester,H5970-029-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice H5970-029 (PPO) H5970-029-000
+All,New York,Westchester,H5970-030-000.pdf,Humana Inc.,Local PPO,Non-SNP,HumanaChoice Giveback H5970-030 (PPO) H5970-030-000
+All,New York,Westchester,H5991-012-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual (HMO D-SNP) H5991-012-002
+All,New York,Westchester,H5991-013-002.pdf,"EmblemHealth, Inc.",HMO,Dual-Eligible,EmblemHealth VIP Dual Enhanced (HMO D-SNP) H5991-013-002
+All,New York,Westchester,H9678-002-000.pdf,"Healthfirst, Inc.",Local PPO,Non-SNP,Healthfirst Signature (PPO) H9678-002-000
