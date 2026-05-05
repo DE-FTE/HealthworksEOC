@@ -52,8 +52,9 @@ const MAX_NODES_PER_DOC = parseInt(process.env.MAX_NODES_PER_QUERY || '6', 10);
 // 6 nodes per doc — restored to richer context now that smart filtering reduces doc count
 const MAX_DOCS_TO_QUERY = parseInt(process.env.MAX_DOCS_TO_QUERY   || '5', 10);
 // Max 5 docs — but smart scoring means specific queries only hit 2-3 docs anyway
-const MAX_CONTEXT_CHARS = parseInt(process.env.MAX_CONTEXT_CHARS   || '50000', 10);
-// Safety net: hard truncate at 50k chars — only triggers if scoring passes too many docs
+const MAX_CONTEXT_CHARS = parseInt(process.env.MAX_CONTEXT_CHARS   || '120000', 10);
+// 120k chars: multi-benefit × multi-doc queries need ~60k per doc (15 pages × 4k chars).
+// GPT-4o 128k token limit is not a concern — 120k chars ≈ 30k tokens, well within limit.
 
 // ─── PHASE 0: Query rewriting + type classification ───────────────────────────
 
@@ -323,20 +324,28 @@ async function selectNodesForDoc(stored, searchQuery, queryType = 'general', ben
   // Three passes per term (copayment → cost → bare) ensures maximum recall
   // regardless of how a specific plan phrases its benefits table.
   if (isMultiBenefit) {
-    // Two-phase retrieval per term (5 pages total = 3 copay + 2 frequency).
+    // Single-list retrieval, 6 pages per term.
     //
-    // WHY TWO PHASES instead of a single ranked list:
-    //   Copayment pages always score highest (they contain "copayment $X" which
-    //   matches our primary search signals). In a single ranked list, the top 5
-    //   slots fill with copayment pages and frequency/items pages (which score
-    //   lower) never make it in — leaving H0976-style plans with empty rows for
-    //   Frequency Limits and Included Items.
+    // SEARCH ORDER IS THE KEY INSIGHT:
+    //   Problem: copayment pages always outscore frequency pages, so a flat list
+    //   ordered copayment-first fills all slots before frequency pages appear.
     //
-    //   Increasing pagesPerTerm to 8+ causes context truncation for H0978:
-    //   24 pages × ~4k chars = ~96k > 25k budget → dental/vision get cut off.
+    //   Fix: put `${syn} frequency exam` FIRST in allResults.
+    //   "frequency exam" is a 3-keyword query — Tier-2 scoring (+100) fires only
+    //   on pages that have ALL THREE of [benefit, frequency, exam]. Those are
+    //   exactly the "1 exam every 12 months" or "2 hearing aids per year" pages.
+    //   They surface at the top of this search and grab slot 1-2 before copayment
+    //   pages from later searches can crowd them out.
     //
-    //   Solution: guaranteed 3-slot copayment budget + 2-slot frequency budget.
-    //   Total stays at 5 pages per term — same context cost as before.
+    //   For plans that put all info on one page (H0978 style), that page scores
+    //   high in BOTH `frequency exam` AND `copayment` → still gets slot 1. ✓
+    //   For plans with separate copay and frequency pages (H0976 style), the
+    //   frequency page wins slot 1 from `frequency exam`, copay page wins slot 2
+    //   from `copayment`. Both are included. ✓
+    //
+    // MAX_CONTEXT_CHARS raised to 120k so the per-doc budget (60k for 2 docs)
+    // fits ~15-18 unique pages × ~3.5k chars without truncation.
+    const pagesPerTerm = 6;
     const finalNodes = [];
 
     for (const term of benefitTerms) {
@@ -349,42 +358,30 @@ async function selectNodesForDoc(stored, searchQuery, queryType = 'general', ben
 
       const synList = BENEFIT_SYNONYMS[key] || BENEFIT_SYNONYMS[coreTerm] || [coreTerm];
 
-      // ── Phase 1: copayment / cost / services (top 3 pages) ─────────────────
-      const p1Results = [];
+      const allResults = [];
       for (const syn of synList) {
-        p1Results.push(...keywordSearch(allNodes, `${syn} copayment`, 25));
-        p1Results.push(...keywordSearch(allNodes, `${syn} cost`, 20));
-        p1Results.push(...keywordSearch(allNodes, `${syn} services`, 20));
-      }
-      const p1Seen = new Set();
-      const p1Nodes = [];
-      for (const node of p1Results) {
-        if (!p1Seen.has(node.nodeId) && p1Nodes.length < 3) {
-          p1Seen.add(node.nodeId);
-          p1Nodes.push(node);
-        }
+        // Priority 1: combined frequency+exam signal (finds "1 exam/year" pages)
+        allResults.push(...keywordSearch(allNodes, `${syn} frequency exam`, 20));
+        // Priority 2: copayment / cost / services (main benefit table)
+        allResults.push(...keywordSearch(allNodes, `${syn} copayment`, 25));
+        allResults.push(...keywordSearch(allNodes, `${syn} cost`, 20));
+        allResults.push(...keywordSearch(allNodes, `${syn} services`, 20));
+        // Priority 3: individual frequency/exam (broader fallback)
+        allResults.push(...keywordSearch(allNodes, `${syn} frequency`, 20));
+        allResults.push(...keywordSearch(allNodes, `${syn} exam`, 20));
+        // Priority 4: bare term (maximum recall)
+        allResults.push(...keywordSearch(allNodes, syn, 15));
       }
 
-      // ── Phase 2: frequency / exam / items (top 2 pages, new pages only) ───
-      // "frequency" + "exam" directly target pages like "one exam every 12 months"
-      // or "hearing aids: 2 per year" that copayment searches miss.
-      const p2Results = [];
-      for (const syn of synList) {
-        p2Results.push(...keywordSearch(allNodes, `${syn} frequency`, 20));
-        p2Results.push(...keywordSearch(allNodes, `${syn} exam`, 20));
-        p2Results.push(...keywordSearch(allNodes, syn, 15));
-      }
-      const p2Seen = new Set(p1Seen); // exclude pages already in phase 1
-      const p2Nodes = [];
-      for (const node of p2Results) {
-        if (!p2Seen.has(node.nodeId) && p2Nodes.length < 2) {
-          p2Seen.add(node.nodeId);
-          p2Nodes.push(node);
+      const termSeen = new Set();
+      let added = 0;
+      for (const node of allResults) {
+        if (!termSeen.has(node.nodeId) && added < pagesPerTerm) {
+          termSeen.add(node.nodeId);
+          finalNodes.push(node);
+          added++;
         }
       }
-
-      // 3 copayment pages + 2 frequency pages = 5 per term
-      finalNodes.push(...p1Nodes, ...p2Nodes);
     }
 
     return getNodeContents(allNodes, finalNodes.map(n => String(n.nodeId)));
@@ -785,7 +782,7 @@ Query type detected: ${queryType}`;
           const allNodes = flattenAllNodes(doc.stored.structure).filter(n => n.text && n.text.length > 50);
 
           if (benefitTerms.length > 1) {
-            // Multi-benefit retry: two-phase approach, wider limits (4+3=7 per term)
+            // Multi-benefit retry: same frequency-first single-list approach, 8 pages/term
             const retryNodes = [];
             for (const term of benefitTerms) {
               const key = term.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -795,26 +792,21 @@ Query type detected: ${queryType}`;
                 .replace(/\s+/g, ' ')
                 .trim();
               const synList = BENEFIT_SYNONYMS[key] || BENEFIT_SYNONYMS[coreTerm] || [coreTerm];
-
-              const rp1 = [], rp2 = [];
+              const allR = [];
               for (const syn of synList) {
-                rp1.push(...keywordSearch(allNodes, `${syn} copayment`, 40));
-                rp1.push(...keywordSearch(allNodes, `${syn} cost`, 30));
-                rp1.push(...keywordSearch(allNodes, `${syn} services`, 25));
-                rp2.push(...keywordSearch(allNodes, `${syn} frequency`, 25));
-                rp2.push(...keywordSearch(allNodes, `${syn} exam`, 25));
-                rp2.push(...keywordSearch(allNodes, syn, 20));
+                allR.push(...keywordSearch(allNodes, `${syn} frequency exam`, 25));
+                allR.push(...keywordSearch(allNodes, `${syn} copayment`, 40));
+                allR.push(...keywordSearch(allNodes, `${syn} cost`, 30));
+                allR.push(...keywordSearch(allNodes, `${syn} services`, 25));
+                allR.push(...keywordSearch(allNodes, `${syn} frequency`, 25));
+                allR.push(...keywordSearch(allNodes, `${syn} exam`, 25));
+                allR.push(...keywordSearch(allNodes, syn, 20));
               }
-              const rp1Seen = new Set();
-              for (const node of rp1) {
-                if (!rp1Seen.has(node.nodeId) && rp1Seen.size < 4) {
-                  rp1Seen.add(node.nodeId); retryNodes.push(node);
-                }
-              }
-              const rp2Seen = new Set(rp1Seen);
-              for (const node of rp2) {
-                if (!rp2Seen.has(node.nodeId) && rp2Seen.size - rp1Seen.size < 3) {
-                  rp2Seen.add(node.nodeId); retryNodes.push(node);
+              const termSeen = new Set();
+              let added = 0;
+              for (const node of allR) {
+                if (!termSeen.has(node.nodeId) && added < 8) {
+                  termSeen.add(node.nodeId); retryNodes.push(node); added++;
                 }
               }
             }
