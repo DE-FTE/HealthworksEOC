@@ -750,13 +750,17 @@ export default function Home() {
       setStorageLabel(data.label || '');
       const files = data.files || [];
       if (files.length === 0) { setStartupDone(true); return; }
+      // Always start as 'indexing' — index-pdf returns from cache instantly when the
+      // tree index is already in /tmp (warm instance), and re-parses when /tmp was
+      // cleared by a Vercel cold start. Skipping indexOne for "already indexed" files
+      // causes "Documents not found" after cold starts because the registry has docIds
+      // but the tree indices are gone from /tmp.
       setDocuments(files.map(f => ({
-        filename: f.name, docId: f.indexed ? f.docId : null,
-        nodeCount: f.indexed ? f.nodeCount : 0,
-        status: f.indexed ? 'ready' : 'indexing', progress: f.indexed ? '' : 'Queued…', error: null,
+        filename: f.name, docId: null,
+        nodeCount: 0,
+        status: 'indexing', progress: 'Queued…', error: null,
       })));
-      const newFiles = files.filter(f => !f.indexed);
-      if (newFiles.length > 0) await Promise.all(newFiles.map(f => indexOne(f.name)));
+      await Promise.all(files.map(f => indexOne(f.name)));
     } catch(err) { console.error('autoIndexAll error:', err); }
     finally { setStartupDone(true); }
   };
