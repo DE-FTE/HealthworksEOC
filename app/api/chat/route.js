@@ -324,9 +324,11 @@ async function selectNodesForDoc(stored, searchQuery, queryType = 'general', ben
   // regardless of how a specific plan phrases its benefits table.
   if (isMultiBenefit) {
     // How many pages each benefit term gets in the final context.
-    // 5 pages × N terms — getNodeContents() deduplicates via Set so overlapping
-    // pages are only sent once to GPT-4o.
-    const pagesPerTerm = 5;
+    // 8 pages × N terms — getNodeContents() deduplicates via Set so overlapping
+    // pages appear only once to GPT-4o. 8 (not 5) because some plans (e.g. H0976)
+    // put copayment on one page and frequency/items on separate pages — 5 filled up
+    // with copayment pages before reaching the frequency/items detail pages.
+    const pagesPerTerm = 8;
 
     // Each term uses its OWN seen set — no shared dedup across terms.
     // WHY: shared dedup causes Dental to "consume" the summary page that also
@@ -346,13 +348,18 @@ async function selectNodesForDoc(stored, searchQuery, queryType = 'general', ben
       // Build expanded synonym list: specific synonyms for known types, else bare term
       const synList = BENEFIT_SYNONYMS[key] || BENEFIT_SYNONYMS[coreTerm] || [coreTerm];
 
-      // Multi-pass per synonym: copayment → cost → services → bare
+      // Multi-pass per synonym:
+      //   copayment → cost → services → frequency → exam → bare
+      // "frequency" + "exam" passes are critical for plans (e.g. H0976) that put
+      // copay info on one page and frequency/limit/items info on separate pages.
       // Different plans phrase costs as "copayment: $X" vs "your cost: $X" vs "cost sharing"
       const allResults = [];
       for (const syn of synList) {
         allResults.push(...keywordSearch(allNodes, `${syn} copayment`, 25));
         allResults.push(...keywordSearch(allNodes, `${syn} cost`, 20));
         allResults.push(...keywordSearch(allNodes, `${syn} services`, 20));
+        allResults.push(...keywordSearch(allNodes, `${syn} frequency`, 20));
+        allResults.push(...keywordSearch(allNodes, `${syn} exam`, 20));
         allResults.push(...keywordSearch(allNodes, syn, 15));
       }
 
@@ -767,7 +774,7 @@ Query type detected: ${queryType}`;
 
           if (benefitTerms.length > 1) {
             // Multi-benefit retry: synonym expansion + per-term dedup (wider than pass 1)
-            const retryPagesPerTerm = 6;
+            const retryPagesPerTerm = 10;
             const retryNodes = [];
             for (const term of benefitTerms) {
               const key = term.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -782,6 +789,8 @@ Query type detected: ${queryType}`;
                 allR.push(...keywordSearch(allNodes, `${syn} copayment`, 40));
                 allR.push(...keywordSearch(allNodes, `${syn} cost`, 30));
                 allR.push(...keywordSearch(allNodes, `${syn} services`, 25));
+                allR.push(...keywordSearch(allNodes, `${syn} frequency`, 25));
+                allR.push(...keywordSearch(allNodes, `${syn} exam`, 25));
                 allR.push(...keywordSearch(allNodes, syn, 20));
               }
               const termSeen = new Set();
