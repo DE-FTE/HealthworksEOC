@@ -275,6 +275,29 @@ function getIntroPagesForDoc(stored) {
   return getNodeContents(allNodes, allNodes.slice(0, 30).map(n => String(n.nodeId)));
 }
 
+// ─── Synonym map — shared between main and retry paths ───────────────────────
+// Plans use wildly different section titles for the same benefit.
+//   "Vision" → "Routine Vision Services", "Eye Care", "Optometric Services"
+//   "Hearing" → "Audiologic Services", "Hearing Aid Fitting", "Routine Hearing"
+const BENEFIT_SYNONYMS = {
+  dental:             ['dental', 'oral', 'teeth cleaning', 'fluoride', 'oral exam', 'routine dental'],
+  vision:             ['vision', 'eye exam', 'optometric', 'optometry', 'eye care', 'routine vision', 'optic', 'spectacle'],
+  hearing:            ['hearing', 'hearing aid', 'audiolog', 'routine hearing', 'auditory', 'audiometric'],
+  otc:                ['otc', 'over-the-counter', 'over the counter'],
+  'flex card':        ['flex card', 'flex benefit', 'allowance card', 'supplemental benefit'],
+  pharmacy:           ['pharmacy', 'prescription drug', 'drug coverage'],
+  chiropractic:       ['chiropractic', 'chiropractor', 'spinal manipulation'],
+  acupuncture:        ['acupuncture'],
+  podiatry:           ['podiatry', 'foot care', 'routine foot'],
+  'physical therapy': ['physical therapy', 'physiotherapy'],
+  'mental health':    ['mental health', 'behavioral health', 'psychiatric'],
+  transportation:     ['transportation', 'medical transport', 'non-emergency transport'],
+  fitness:            ['fitness', 'gym membership', 'exercise benefit'],
+  emergency:          ['emergency', 'emergency room', 'emergency care', 'urgent care'],
+  inpatient:          ['inpatient', 'hospital stay', 'hospitalization'],
+  outpatient:         ['outpatient', 'ambulatory'],
+};
+
 // ─── PHASE 2b: Keyword selection (benefit queries) ────────────────────────────
 
 async function selectNodesForDoc(stored, searchQuery, queryType = 'general', benefitTerms = []) {
@@ -300,46 +323,47 @@ async function selectNodesForDoc(stored, searchQuery, queryType = 'general', ben
   // Three passes per term (copayment → cost → bare) ensures maximum recall
   // regardless of how a specific plan phrases its benefits table.
   if (isMultiBenefit) {
-    const pagesPerTerm = 4;
-    const seenFinal = new Set(), finalNodes = [];
+    // How many pages each benefit term gets in the final context.
+    // 5 pages × N terms — getNodeContents() deduplicates via Set so overlapping
+    // pages are only sent once to GPT-4o.
+    const pagesPerTerm = 5;
+
+    // Each term uses its OWN seen set — no shared dedup across terms.
+    // WHY: shared dedup causes Dental to "consume" the summary page that also
+    // lists Vision/Hearing copays, leaving 0 new pages for those terms.
+    // getNodeContents() deduplicates nodeIds via Set so duplicate pages from
+    // different terms only appear once in the GPT-4o context.
+    const finalNodes = [];
 
     for (const term of benefitTerms) {
-      // coreTerm: strip "services" AND "copay" → "Podiatry services Copay" → "Podiatry"
-      // Used for augmented signals where "services" adds noise
-      const coreTerm = term
+      const key = term.toLowerCase().replace(/\s+/g, ' ').trim();
+      const coreTerm = key
         .replace(/\s*(copay|copayment)\s*$/i, '')
         .replace(/\bservices?\b/gi, '')
         .replace(/\s+/g, ' ')
         .trim();
 
-      // termWithServices: strip only "copay" → "Podiatry services Copay" → "Podiatry services"
-      // WHY: H0976 page is titled "Podiatry Services: You pay $0" — "services" is critical
-      // for matching that page title. Stripping it makes "Podiatry services" → "Podiatry"
-      // which is too broad and returns TOC/appendix pages instead of the benefits table.
-      const termWithServices = term
-        .replace(/\s*(copay|copayment)\s*$/i, '')
-        .replace(/\s+/g, ' ')
-        .trim();
+      // Build expanded synonym list: specific synonyms for known types, else bare term
+      const synList = BENEFIT_SYNONYMS[key] || BENEFIT_SYNONYMS[coreTerm] || [coreTerm];
 
-      // Pass 1: "Podiatry copayment"        — plans that say "copayment: $X"
-      // Pass 2: "Podiatry cost"             — plans that say "your cost: $X" or "cost sharing"
-      // Pass 3: "Podiatry services"         — matches page titles like "Podiatry Services" (key for H0976)
-      // Pass 4: "Podiatry"                  — maximum recall fallback
-      const r1 = keywordSearch(allNodes, `${coreTerm} copayment`, 30);
-      const r2 = keywordSearch(allNodes, `${coreTerm} cost`, 20);
-      const r3 = keywordSearch(allNodes, termWithServices, 20);
-      const r4 = keywordSearch(allNodes, coreTerm, 15);
+      // Multi-pass per synonym: copayment → cost → services → bare
+      // Different plans phrase costs as "copayment: $X" vs "your cost: $X" vs "cost sharing"
+      const allResults = [];
+      for (const syn of synList) {
+        allResults.push(...keywordSearch(allNodes, `${syn} copayment`, 25));
+        allResults.push(...keywordSearch(allNodes, `${syn} cost`, 20));
+        allResults.push(...keywordSearch(allNodes, `${syn} services`, 20));
+        allResults.push(...keywordSearch(allNodes, syn, 15));
+      }
 
+      // Deduplicate within this term; collect top pagesPerTerm unique nodes
       const termSeen = new Set();
       let added = 0;
-      for (const node of [...r1, ...r2, ...r3, ...r4]) {
-        if (!termSeen.has(node.nodeId)) {
+      for (const node of allResults) {
+        if (!termSeen.has(node.nodeId) && added < pagesPerTerm) {
           termSeen.add(node.nodeId);
-          if (!seenFinal.has(node.nodeId) && added < pagesPerTerm) {
-            seenFinal.add(node.nodeId);
-            finalNodes.push(node);
-            added++;
-          }
+          finalNodes.push(node);
+          added++;
         }
       }
     }
@@ -742,33 +766,31 @@ Query type detected: ${queryType}`;
           const allNodes = flattenAllNodes(doc.stored.structure).filter(n => n.text && n.text.length > 50);
 
           if (benefitTerms.length > 1) {
-            // Multi-benefit retry: same three-pass approach, 5 pages/term for wider coverage
-            const retryPagesPerTerm = 5;
-            const seenR = new Set(), retryNodes = [];
+            // Multi-benefit retry: synonym expansion + per-term dedup (wider than pass 1)
+            const retryPagesPerTerm = 6;
+            const retryNodes = [];
             for (const term of benefitTerms) {
-              const coreTerm = term
+              const key = term.toLowerCase().replace(/\s+/g, ' ').trim();
+              const coreTerm = key
                 .replace(/\s*(copay|copayment)\s*$/i, '')
                 .replace(/\bservices?\b/gi, '')
                 .replace(/\s+/g, ' ')
                 .trim();
-              const termWithServices = term
-                .replace(/\s*(copay|copayment)\s*$/i, '')
-                .replace(/\s+/g, ' ')
-                .trim();
-              const r1 = keywordSearch(allNodes, `${coreTerm} copayment`, 40);
-              const r2 = keywordSearch(allNodes, `${coreTerm} cost`, 30);
-              const r3 = keywordSearch(allNodes, termWithServices, 25);
-              const r4 = keywordSearch(allNodes, coreTerm, 20);
+              const synList = BENEFIT_SYNONYMS[key] || BENEFIT_SYNONYMS[coreTerm] || [coreTerm];
+              const allR = [];
+              for (const syn of synList) {
+                allR.push(...keywordSearch(allNodes, `${syn} copayment`, 40));
+                allR.push(...keywordSearch(allNodes, `${syn} cost`, 30));
+                allR.push(...keywordSearch(allNodes, `${syn} services`, 25));
+                allR.push(...keywordSearch(allNodes, syn, 20));
+              }
               const termSeen = new Set();
               let added = 0;
-              for (const node of [...r1, ...r2, ...r3, ...r4]) {
-                if (!termSeen.has(node.nodeId)) {
+              for (const node of allR) {
+                if (!termSeen.has(node.nodeId) && added < retryPagesPerTerm) {
                   termSeen.add(node.nodeId);
-                  if (!seenR.has(node.nodeId) && added < retryPagesPerTerm) {
-                    seenR.add(node.nodeId);
-                    retryNodes.push(node);
-                    added++;
-                  }
+                  retryNodes.push(node);
+                  added++;
                 }
               }
             }
