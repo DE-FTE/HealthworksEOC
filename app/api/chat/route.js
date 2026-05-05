@@ -131,11 +131,24 @@ function extractBenefitTerms(message) {
   }
 
   // Pattern 2: 3+ comma-separated phrases each containing a benefit signal word
-  const BENEFIT_WORD = /\b(copay|copayment|coinsurance|deductible|coverage|service|benefit|cost)\b/i;
+  const BENEFIT_WORD = /\b(copay|copayment|coinsurance|deductible|coverage|service|benefits?\b|cost)\b/i;
   const parts = message.split(/,\s*(?:and\s+)?/).map(t => t.trim());
   if (parts.length >= 3) {
     const hits = parts.filter(t => t.length > 4 && t.length < 80 && BENEFIT_WORD.test(t));
     if (hits.length >= 3) return hits;
+  }
+
+  // Pattern 3: "Compare X, Y, and Z benefits" — named healthcare services in a
+  // leading clause before any structured list ("Include in a table:", "* ", etc.).
+  // Handles queries like "Compare Dental, Vision, and Hearing benefits for plan X".
+  const HEALTHCARE_SERVICE = /\b(dental|vision|hearing|otc|over.the.counter|flex\s*card|pharmacy|chiropractic|acupuncture|podiatry|physical\s*therapy|mental\s*health|transportation|fitness|hospice|skilled\s*nursing|urgent\s*care|emergency|inpatient|outpatient)\b/i;
+  const leadingClause = message.split(/\binclude\s+in\s+a\b|\bprovide:|\balso\s+provide\b|\* /i)[0].trim();
+  if (leadingClause.length > 0) {
+    const leadParts = leadingClause.split(/,\s*(?:and\s+)?/);
+    const serviceTerms = leadParts
+      .map(p => { const m = p.match(HEALTHCARE_SERVICE); return m ? m[0].trim() : null; })
+      .filter(Boolean);
+    if (serviceTerms.length >= 2) return serviceTerms;
   }
 
   return [];
